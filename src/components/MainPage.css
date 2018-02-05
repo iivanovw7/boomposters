@@ -1,0 +1,100 @@
+@import url('https://fonts.googleapis.com/css?family=Press+Start+2P');
+
+@font-face {
+    font-family: 'Snowstorm';
+    src: url('../fonts/useanyfont/Snowstorm.woff') format('woff');
+    font-weight: 700;
+    font-style: normal;
+    font-size: x-large;
+}
+
+
+
+
+.logo {
+    display: flex;
+    max-width: 900px;
+    max-height: 450px;
+    margin: 50px auto;
+}
+
+.separator {
+    display: flex;
+    flex-direction: row;
+    max-width: 900px;
+    align-items: center;
+    margin: 0 auto;
+
+}
+
+.categories {
+    margin-top: 80px;
+    margin-bottom: 50px;
+    display: grid;
+    grid-template-columns: 300px 300px 300px;
+    grid-template-rows: 300px 300px 300px;
+    justify-content: center;
+    align-items: center;
+    grid-column-gap: 20px;
+    grid-row-gap: 100px;
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    text-decoration: solid black;
+    font-size: 250%;
+    font-family: 'Snowstorm', cursive;
+}
+
+.wrapper img {
+    margin: 10px;
+}
+
+.actionIconsContainer {
+    margin-top: 70px;
+    margin-bottom: 50px;
+    display: grid;
+    grid-template-columns: 150px 150px 150px 150px;
+    justify-content: center;
+    align-items: center;
+    grid-column-gap: 70px;
+}
+
+.actionIconsContainer div, img {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    margin: 0 auto;
+    font-family: 'Snowstorm', cursive;
+
+
+}
+
+.textContainer {
+    padding-left: 10%;
+    text-align: left;
+    font-size: 120%;
+    font-family: 'Snowstorm', cursive;
+}
+
+.socialPane {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    justify-content: center;
+}
+
+.socialPane div{
+    display: flex;
+    flex-direction: row;
+    margin: 0 auto;
+    justify-content: center;
+}
+
+.socialPane img{
+    margin: 5px;
+}
+
+
+

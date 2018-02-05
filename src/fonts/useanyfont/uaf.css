@@ -1,0 +1,13 @@
+			@font-face {
+				font-family: 'h2';
+				font-style: normal;
+				src: url('/wp-content/uploads/useanyfont/170822024458H2.eot');
+				src: local('h2'), url('/wp-content/uploads/useanyfont/170822024458H2.eot') format('embedded-opentype'), url('/wp-content/uploads/useanyfont/170822024458H2.woff') format('woff');
+			}
+            
+            .h2{font-family: 'h2' !important;}
+            
+						h2{
+					font-family: 'h2' !important;
+				}
+		
