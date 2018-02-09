@@ -26,6 +26,10 @@ const style = {
     marginTop: 10,
 };
 
+const ActionBar = {
+    marginTop: 30,
+};
+
 const topChart = {
     marginTop: 20,
 };
@@ -36,7 +40,7 @@ const iconStyle = {
 };
 
 const footer =  {
-    margin: 10,
+    margin: 30,
 };
 
 const CAT_URL = '../src/img/categories/';
@@ -98,16 +102,16 @@ class CategoriesList extends Component {
                         <img className='separator' src={'../src/img/razdelitel.png'}/>
                     </div>
                     <div className="actionIconsContainer">
-                        <div><img src={'../src/img/star.png'}/><br></br>
-                            <h3>HD качество печати</h3></div>
-                        <div><img src={'../src/img/cloud-computing.png'}/><br></br>
-                            <h3>Ваше изображение</h3></div>
-                        <div><img src={'../src/img/delivery-truck.png'}/><br></br>
-                            <h3>Все регионы РФ</h3></div>
-                        <div><img src={'../src/img/thumbs-up-hand-symbol.png'}/><br></br>
-                            <h3>Легко и просто</h3></div>
+                        <div><img src="../../src/icons/actionB/hdmovie.svg" width="100" height="100" alt="HD качество"/><br></br>
+                            <h3>ОТЛИЧНОЕ КАЧЕСТВО</h3></div>
+                        <div><img src="../../src/icons/actionB/upload.svg" width="100" height="100" alt="Загрузка изображений"/><br></br>
+                            <h3>ВАШЕ ИЗОБРАЖЕНИЕ</h3></div>
+                        <div><img src="../../src/icons/actionB/delivery.svg" width="100" height="100" alt="Доставка"/><br></br>
+                            <h3>ДОСТАВКА ПО РФ</h3></div>
+                        <div><img src="../../src/icons/actionB/ok.svg" width="100" height="100" alt="Легко и просто"/><br></br>
+                            <h3>ЛЕГКО И ПРОСТО</h3></div>
                     </div>
-                    <div  className='row' style={style}>
+                    <div  className='row' style={ActionBar}>
                         <div className="col-12 col-sm-6 col-md-8 textContainer">
                             <div className={"textContainer"}>
                                 <h2>Магазин улётных постеров</h2>
@@ -116,7 +120,7 @@ class CategoriesList extends Component {
                                     <li>Плакаты и картины с вашими изображениями</li>
                                     <li>Быстрое изготовление</li>
                                     <li>Каталог лучших постеров на стену</li>
-                                    <li>Лучшый арт со всей сети</li>
+                                    <li>Лучший арт со всей сети</li>
                                 </ul>
                             </div>
                         </div>
@@ -131,7 +135,7 @@ class CategoriesList extends Component {
                                     <img src="../../src/icons/vk.svg" width="40" height="40" alt="vk" />
                                 </IconButton>
                                 <IconButton style={iconStyle}>
-                                    <img src="../../src/icons/inst.svg" width="40" height="40" alt="instagram" />
+                                    <img src="../../src/icons/inst.svg" width="38" height="38" alt="instagram" />
                                 </IconButton>
                             </div>
                         </div>
