@@ -8,7 +8,9 @@
     font-size: x-large;
 }
 
-
+.topButton {
+    font-size: x-small;
+}
 
 
 .logo {
@@ -104,6 +106,10 @@
 
 .socialPane img{
     margin: 5px;
+}
+
+.Copyright {
+    margin: 0 auto;
 }
 
 

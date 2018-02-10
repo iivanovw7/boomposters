@@ -1,36 +1,56 @@
+@media (min-width: 1200px) {
+
+    .reactBody {
+        background-image: url('../src/img/background2.jpg');
+    }
+
+    .container{
+        width:100%;
+        height:100%;
+        /* background: rgb(252, 242, 132);
+        background-repeat: no-repeat;
+        */
+        margin:25px 15px;
+        border-radius:5px;
+        padding: 10px;
+        background-image: url('../src/img/page3.jpg');
+        background-position: center;
+
+
+    }
+
+    .container{
+        position:relative;
+    }
+    .container{
+        box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 20px rgba(0, 0, 0, 0.1) inset;
+    }
+
+    .container:before, .container:after{
+        position:absolute;
+        content:"";
+        top:30px;bottom:30px;left:0;right:0;
+        box-shadow:0 0 25px 8px #020209;
+        border-radius:100px/10px;
+        z-index:-1;
+    }
+
+}
+
+
+@media (max-width: 1200px) {
+    .reactBody{
+        width:100%;
+        height:100%;
+        background-image: url('../src/img/page3.jpg');
+        background-position: center;
+    }
+}
+
 .container{
     text-align: center;
 }
 
-.container{
-    width:100%;
-    height:100%;
-    /* background: rgb(252, 242, 132);
-    background-repeat: no-repeat;
-    */
-    margin:25px 15px;
-    border-radius:5px;
-    padding: 10px;
-    background-image: url('../src/img/page3.jpg');
-    background-position: center;
 
-
-}
-
-.container{
-    position:relative;
-}
-.container{
-    box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 20px rgba(0, 0, 0, 0.1) inset;
-}
-
-.container:before, .container:after{
-    position:absolute;
-    content:"";
-    top:30px;bottom:30px;left:0;right:0;
-    box-shadow:0 0 25px 8px #020209;
-    border-radius:100px/10px;
-    z-index:-1;
-}
 
 

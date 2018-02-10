@@ -72,7 +72,6 @@ export default class NavBar extends React.Component {
                 </ToolbarGroup>
                 <ToolbarGroup>
                     <IconButton> <HomeIcon style={iconStyles} /> </IconButton>
-
                     <TextField
                         hintText="ИСКАТЬ ПОСТЕРЫ"
                         //floatingLabelText="Поиск по тэгам"
