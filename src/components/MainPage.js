@@ -12,7 +12,6 @@ import Whatshot from 'material-ui/svg-icons/social/whatshot';
 
 
 
-
 const style = {
     marginTop: 10,
 };
@@ -55,6 +54,17 @@ const CAT_URL = '../src/img/categories/';
 
 class CategoriesList extends Component {
 
+    componentDidMount(){
+        const ele = document.getElementById('ipl-progress-indicator');
+        if(ele){
+            setTimeout(() => {
+                ele.classList.add('available');
+                setTimeout(() => {
+                    ele.outerHTML = ''
+                }, 2000)
+            }, 1000)
+        }
+    }
 
     renderCategories() {
         return _.map(this.props.categories, category => {
@@ -77,84 +87,87 @@ class CategoriesList extends Component {
 
     render() {
 
-
         const backgroundImages = ["../src/img/background2.jpg"];
 
 
         return (
-                <div style={style}>
-                    <div>
-                        <NavBar/>
-                    </div>
-                    <div className="row">
-                        <div className="logo">
-                            <a href={"/"}><img className="logo" src={'../src/img/logo.png'}/></a>
+
+
+                <div style={style} className={"mainContainer"}>
+                        <div>
+                            <NavBar/>
+                        </div>
+                        <div className="row">
+                            <div className="logo">
+                                <a href={"/"}><img className="logo" src={'../src/img/logo.png'}/></a>
+                            </div>
+                            <div className='separator'>
+                                <img className='separator' src={'../src/img/razdelitel.png'}/>
+                            </div>
+                        </div>
+                        <div>
+                            <div className='categories'>
+                                {this.renderCategories()}
+                            </div>
                         </div>
                         <div className='separator'>
                             <img className='separator' src={'../src/img/razdelitel.png'}/>
                         </div>
-                    </div>
-                    <div>
-                        <div className='categories'>
-                            {this.renderCategories()}
+                        <div className="actionIconsContainer">
+                            <div><img src="../../src/icons/actionB/hdmovie.svg" width="100" height="100" alt="HD качество"/><br></br>
+                                <h3>ОТЛИЧНОЕ КАЧЕСТВО</h3></div>
+                            <div><img src="../../src/icons/actionB/upload.svg" width="100" height="100"
+                                      alt="Загрузка изображений"/><br></br>
+                                <h3>ВАШЕ ИЗОБРАЖЕНИЕ</h3></div>
+                            <div><img src="../../src/icons/actionB/delivery.svg" width="100" height="100"
+                                      alt="Доставка"/><br></br>
+                                <h3>ДОСТАВКА ПО РФ</h3></div>
+                            <div><img src="../../src/icons/actionB/ok.svg" width="100" height="100"
+                                      alt="Легко и просто"/><br></br>
+                                <h3>ЛЕГКО И ПРОСТО</h3></div>
                         </div>
-                    </div>
-                    <div className='separator'>
-                        <img className='separator' src={'../src/img/razdelitel.png'}/>
-                    </div>
-                    <div className="actionIconsContainer">
-                        <div><img src="../../src/icons/actionB/hdmovie.svg" width="100" height="100" alt="HD качество"/><br></br>
-                            <h3>ОТЛИЧНОЕ КАЧЕСТВО</h3></div>
-                        <div><img src="../../src/icons/actionB/upload.svg" width="100" height="100"
-                                  alt="Загрузка изображений"/><br></br>
-                            <h3>ВАШЕ ИЗОБРАЖЕНИЕ</h3></div>
-                        <div><img src="../../src/icons/actionB/delivery.svg" width="100" height="100"
-                                  alt="Доставка"/><br></br>
-                            <h3>ДОСТАВКА ПО РФ</h3></div>
-                        <div><img src="../../src/icons/actionB/ok.svg" width="100" height="100"
-                                  alt="Легко и просто"/><br></br>
-                            <h3>ЛЕГКО И ПРОСТО</h3></div>
-                    </div>
-                    <div className='row' style={ActionBar}>
-                        <div className="col-12 col-sm-6 col-md-8 textContainer">
-                            <div className={"textContainer"}>
-                                <h2>Магазин улётных постеров</h2>
-                                <ul>
-                                    <li>Отличное качество печати</li>
-                                    <li>Плакаты и картины с вашими изображениями</li>
-                                    <li>Быстрое изготовление</li>
-                                    <li>Каталог лучших постеров на стену</li>
-                                    <li>Лучший арт со всей сети</li>
-                                </ul>
+                        <div className='row' style={ActionBar}>
+                            <div className="col-12 col-sm-6 col-md-8 textContainer">
+                                <div className={"textContainer"}>
+                                    <h2>Магазин улётных постеров</h2>
+                                    <ul>
+                                        <li>Отличное качество печати</li>
+                                        <li>Плакаты и картины с вашими изображениями</li>
+                                        <li>Быстрое изготовление</li>
+                                        <li>Каталог лучших постеров на стену</li>
+                                        <li>Лучший арт со всей сети</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div className="col-6 col-md-4" >
+                                <RaisedButton
+                                    label="ТОП-25 ЛУЧШИХ"
+                                    labelPosition="before"
+                                    icon={<Whatshot />}
+                                    style={styles.button}
+                                />
                             </div>
                         </div>
-                        <div className="col-6 col-md-4" >
-                            <RaisedButton
-                                label="ТОП-25 ЛУЧШИХ"
-                                labelPosition="before"
-                                icon={<Whatshot />}
-                                style={styles.button}
-                            />
-                        </div>
-                    </div>
-                    <div style={footer}>
-                        <div className={'socialPane'}>
-                            <div>
-                                <IconButton style={iconStyle}>
-                                    <img src="../../src/icons/vk.svg" width="40" height="40" alt="vk"/>
-                                </IconButton>
-                                <IconButton style={iconStyle}>
-                                    <img src="../../src/icons/inst.svg" width="38" height="38" alt="instagram"/>
-                                </IconButton>
+                        <div style={footer}>
+                            <div className={'socialPane'}>
+                                <div>
+                                    <IconButton style={iconStyle}>
+                                        <img src="../../src/icons/vk.svg" width="40" height="40" alt="vk"/>
+                                    </IconButton>
+                                    <IconButton style={iconStyle}>
+                                        <img src="../../src/icons/inst.svg" width="38" height="38" alt="instagram"/>
+                                    </IconButton>
+                                </div>
+                            </div>
+                            <div className="row">
+                                <div className="col-md-6 col-md-offset-3">
+                                    <div style={style}>© 2018 BOOMPOSTERS.RU ALL RIGHTS RESERVED</div>
+                                </div>
                             </div>
                         </div>
-                        <div className="row">
-                            <div className="col-md-6 col-md-offset-3">
-                                <div style={style}>© 2018 BOOMPOSTERS.RU ALL RIGHTS RESERVED</div>
-                            </div>
-                        </div>
-                    </div>
+
                 </div>
+
         );
     }
 
