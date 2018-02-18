@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {connect} from 'react-redux';
+import { connect } from 'react-redux';
 import _ from 'lodash';
 import NavBar from "./NavBar";
 import './MainPage.css';
@@ -9,12 +9,14 @@ import IconButton from 'material-ui/IconButton';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import darkBaseTheme from 'material-ui/styles/baseThemes/darkBaseTheme';
 import Whatshot from 'material-ui/svg-icons/social/whatshot';
-
+import ShoppingCart from 'material-ui/svg-icons/action/shopping-cart';
+import Upload from 'material-ui/svg-icons/action/backup';
 
 
 const style = {
     marginTop: 10,
 };
+
 
 const styles = {
     button: {
@@ -94,9 +96,7 @@ class CategoriesList extends Component {
 
 
                 <div style={style} className={"mainContainer"}>
-                        <div>
                             <NavBar/>
-                        </div>
                         <div className="row">
                             <div className="logo">
                                 <a href={"/"}><img className="logo" src={'../src/img/logo.png'}/></a>
@@ -126,11 +126,11 @@ class CategoriesList extends Component {
                                       alt="Легко и просто"/><br></br>
                                 <h3>ЛЕГКО И ПРОСТО</h3></div>
                         </div>
-                        <div className='row' style={ActionBar}>
-                            <div className="col-12 col-sm-6 col-md-8 textContainer">
+                        <div className='flexWrapper' style={ActionBar}>
+                            <div>
                                 <div className={"textContainer"}>
-                                    <h2>Магазин улётных постеров</h2>
-                                    <ul>
+                                    <h2>Магазин улётных постеров BOOMPOSTERS.RU</h2>
+                                    <ul className={'textContainerLine'}>
                                         <li>Отличное качество печати</li>
                                         <li>Плакаты и картины с вашими изображениями</li>
                                         <li>Быстрое изготовление</li>
@@ -139,11 +139,23 @@ class CategoriesList extends Component {
                                     </ul>
                                 </div>
                             </div>
-                            <div className="col-6 col-md-4" >
+                            <div className={"flexColumn"}>
                                 <RaisedButton
-                                    label="ТОП-25 ЛУЧШИХ"
+                                    label="ТОП 25 ЛУЧШИХ ПОСТЕРОВ"
                                     labelPosition="before"
                                     icon={<Whatshot />}
+                                    style={styles.button}
+                                />
+                                <RaisedButton
+                                    label="ЗАКАЗАТЬ НАШИ ПОСТЕРЫ"
+                                    labelPosition="before"
+                                    icon={<ShoppingCart />}
+                                    style={styles.button}
+                                />
+                                <RaisedButton
+                                    label="ЗАГРУЗИТЬ ИЗОБРАЖЕНИЕ"
+                                    labelPosition="before"
+                                    icon={<Upload />}
                                     style={styles.button}
                                 />
                             </div>
@@ -159,8 +171,8 @@ class CategoriesList extends Component {
                                     </IconButton>
                                 </div>
                             </div>
-                            <div className="row">
-                                <div className="col-md-6 col-md-offset-3">
+                            <div className="flexColumn">
+                                <div className="Copyright">
                                     <div style={style}>© 2018 BOOMPOSTERS.RU ALL RIGHTS RESERVED</div>
                                 </div>
                             </div>
