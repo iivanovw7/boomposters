@@ -63,8 +63,8 @@ class CategoriesList extends Component {
                 ele.classList.add('available');
                 setTimeout(() => {
                     ele.outerHTML = ''
-                }, 2000)
-            }, 1000)
+                }, 3000)
+            }, 2000)
         }
     }
 
