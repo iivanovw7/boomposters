@@ -98,15 +98,9 @@
 
 }
 
-.textContainer {
-    padding-left: 10%;
-    text-align: left;
-    font-size: 120%;
-    font-family: 'Snowstorm', cursive;
-}
 
 .textContainerLine {
-    font-size: x-large;
+    font-size: 130%;
 }
 
 .socialPane {
@@ -132,9 +126,6 @@
     font-family: Roboto, sans-serif;
 }
 
-.flexWrapper {
-
-}
 
 @media (min-width: 1200px) {
     .flexWrapper {
@@ -142,6 +133,27 @@
         flex-direction: row;
         justify-content: space-around;
     }
+
+    .actionButton {
+        width: 280px;
+
+    }
+
+    .flexWrapper img{
+        width: 100px;
+    }
+
+    .textContainer {
+        padding-left: 10%;
+        text-align: left;
+        font-size: 140%;
+        font-family: 'Snowstorm', cursive;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
 }
 
 @media (max-width: 1200px) {
@@ -150,12 +162,43 @@
         flex-direction: column;
         justify-content: center;
     }
+
+    .flexWrapper img{
+        width: 230px;
+    }
+
+    .flexWrapper h2{
+        font-size: 200%;
+    }
+
+    .actionButton {
+        width: 480px;
+
+    }
+
+    .textContainer {
+        text-align: center;
+        font-size: 140%;
+        font-family: 'Snowstorm', cursive;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .textContainer li {
+        list-style-type: none;
+    }
+
+
 }
 
 .flexColumn {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
+
 }
 
 

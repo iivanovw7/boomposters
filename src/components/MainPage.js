@@ -113,18 +113,15 @@ class CategoriesList extends Component {
                         <div className='separator'>
                             <img className='separator' src={'../src/img/razdelitel.png'}/>
                         </div>
-                        <div className="actionIconsContainer">
-                            <div><img src="../../src/icons/actionB/hdmovie.svg" width="100" height="100" alt="HD качество"/><br></br>
-                                <h3>ОТЛИЧНОЕ КАЧЕСТВО</h3></div>
-                            <div><img src="../../src/icons/actionB/upload.svg" width="100" height="100"
-                                      alt="Загрузка изображений"/><br></br>
-                                <h3>ВАШЕ ИЗОБРАЖЕНИЕ</h3></div>
-                            <div><img src="../../src/icons/actionB/delivery.svg" width="100" height="100"
-                                      alt="Доставка"/><br></br>
-                                <h3>ДОСТАВКА ПО РФ</h3></div>
-                            <div><img src="../../src/icons/actionB/ok.svg" width="100" height="100"
-                                      alt="Легко и просто"/><br></br>
-                                <h3>ЛЕГКО И ПРОСТО</h3></div>
+                        <div className="actionIconsContainer flexWrapper">
+                            <div><img src="../../src/icons/actionB/hdmovie.svg" alt="HD качество"/><br></br>
+                                <h2>ОТЛИЧНОЕ КАЧЕСТВО</h2></div>
+                            <div><img src="../../src/icons/actionB/upload.svg" alt="Загрузка изображений"/><br></br>
+                                <h2>ВАШЕ ИЗОБРАЖЕНИЕ</h2></div>
+                            <div><img src="../../src/icons/actionB/delivery.svg" alt="Доставка"/><br></br>
+                                <h2>ДОСТАВКА ПО РФ</h2></div>
+                            <div><img src="../../src/icons/actionB/ok.svg" alt="Легко и просто"/><br></br>
+                                <h2>ЛЕГКО И ПРОСТО</h2></div>
                         </div>
                         <div className='flexWrapper' style={ActionBar}>
                             <div>
@@ -141,18 +138,21 @@ class CategoriesList extends Component {
                             </div>
                             <div className={"flexColumn"}>
                                 <RaisedButton
+                                    className={'actionButton'}
                                     label="ТОП 25 ЛУЧШИХ ПОСТЕРОВ"
                                     labelPosition="before"
                                     icon={<Whatshot />}
                                     style={styles.button}
                                 />
                                 <RaisedButton
+                                    className={'actionButton'}
                                     label="ЗАКАЗАТЬ НАШИ ПОСТЕРЫ"
                                     labelPosition="before"
                                     icon={<ShoppingCart />}
                                     style={styles.button}
                                 />
                                 <RaisedButton
+                                    className={'actionButton'}
                                     label="ЗАГРУЗИТЬ ИЗОБРАЖЕНИЕ"
                                     labelPosition="before"
                                     icon={<Upload />}
