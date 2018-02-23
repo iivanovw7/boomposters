@@ -54,7 +54,6 @@ export default class MobilePanel extends React.Component {
             <div>
                 <AppBar className={'navBarStyle'}
                         style={barStyle}
-                        title="Магазин улётных постеров"
                         onClick={this.handleToggle}>
                     <FlatButton
                         style={iconStyles}
