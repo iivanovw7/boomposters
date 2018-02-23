@@ -1,0 +1,9 @@
+.navBarStyle {
+    color: rgba(255, 255, 255, 1);
+    fill: white;
+    background-color: transparent;
+}
+
+AppBar {
+    background-color: transparent;
+}
