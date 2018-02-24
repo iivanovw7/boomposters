@@ -10,18 +10,38 @@ import IconButton from 'material-ui/IconButton';
 import ShoppingCart from 'material-ui/svg-icons/action/shopping-cart';
 import FlatButton from 'material-ui/FlatButton';
 import Toggle from 'material-ui/Toggle';
+import TextField from 'material-ui/TextField';
+import Menu from 'material-ui/svg-icons/navigation/menu';
+import ActionAndroid from 'material-ui/svg-icons/action/android';
+import Search from 'material-ui/svg-icons/action/search';
 
+const HomeIcon = (props) => (
+    <SvgIcon {...props}>
+        <path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z" />
+    </SvgIcon>
+);
 
 const iconStyles = {
-    color: 'white',
-    textColor: 'white',
-    margin: 'auto',
-    align: 'right'
+    marginRight: 24,
 };
 
+const styles = {
 
-const barStyle = {
-    background: '#373a3c',
+    iconStyles: {
+        color: 'white',
+        textColor: 'white',
+        margin: 'auto',
+        align: 'right'
+    },
+
+    barStyle: {
+        background: 'rgba(100, 95, 90, 1)',
+        color: 'white',
+        textColor: 'white',
+        hintColor: Colors.white,
+        hintStyle: Colors.white,
+        hintText: Colors.white,
+    },
 };
 
 const muiTheme = getMuiTheme({
@@ -46,22 +66,42 @@ export default class MobilePanel extends React.Component {
 
     handleToggle = () => this.setState({open: !this.state.open});
 
+    handleClose = () => this.setState({open: false});
+
+    handleChange = (event, index, value) => this.setState({value});
+
 
     render() {
         return (
 
             <MuiThemeProvider muiTheme={muiTheme}>
             <div>
-                <AppBar className={'navBarStyle'}
-                        style={barStyle}
-                        onClick={this.handleToggle}>
-                    <FlatButton
-                        style={iconStyles}
-                        icon={<ShoppingCart/>}
-                    />
-                </AppBar>
 
-                <Drawer open={this.state.open}>
+
+                <AppBar
+                    className={'navBarStyle'}
+                    style={styles.barStyle}
+                    title={
+
+                        <FlatButton
+                            label="поиск"
+                            labelPosition="before"
+                            primary={true}
+                            icon={<Searыch />}
+                        />
+
+                    }
+                    iconElementLeft={<IconButton><Menu onClick={this.handleToggle}/></IconButton>}
+                    iconElementRight={<IconButton><ShoppingCart/></IconButton>}
+                />
+
+
+                <Drawer
+                    docked={false}
+                    width={200}
+                    open={this.state.open}
+                    onRequestChange={(open) => this.setState({open})}
+                >
                     <MenuItem primaryText="Комиксы" />
                     <MenuItem primaryText="Иллюстрации" />
                     <MenuItem primaryText="Сериалы" />
@@ -70,6 +110,7 @@ export default class MobilePanel extends React.Component {
                     <MenuItem primaryText="Ч/Б" />
                     <MenuItem primaryText="Музыкальные" />
                     <MenuItem primaryText="Лоу-Арт" />
+                    <MenuItem onClick={this.handleClose}>Назад</MenuItem>
                 </Drawer>
 
             </div>

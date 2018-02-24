@@ -1,9 +1,19 @@
 .navBarStyle {
     color: rgba(255, 255, 255, 1);
     fill: white;
-    background-color: transparent;
-}
+    background-color: rgba(100, 95, 90, 0.87);
+    text-decoration-color: white;
 
-AppBar {
-    background-color: transparent;
+    outline: 1px dashed #98abb9;
+    outline-offset: -5px;
+
+    background-color: #373a3c;
+    margin: 10px;
+
+    /*shadow*/
+    -webkit-box-shadow: 3px 3px 3px #000;
+    -moz-box-shadow: 3px 3px 3px #000;
+    box-shadow: 3px 3px 3px #000;
+    margin-bottom: 20px;
+
 }
