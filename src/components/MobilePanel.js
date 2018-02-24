@@ -84,7 +84,7 @@ export default class MobilePanel extends React.Component {
                     title={
 
                         <FlatButton
-                            label="поиск"
+                            label="поиск постеров"
                             labelPosition="before"
                             primary={true}
                             icon={<Search />}
