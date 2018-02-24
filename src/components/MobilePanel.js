@@ -87,7 +87,7 @@ export default class MobilePanel extends React.Component {
                             label="поиск"
                             labelPosition="before"
                             primary={true}
-                            icon={<Searыch />}
+                            icon={<Search />}
                         />
 
                     }
