@@ -15,6 +15,7 @@ import MobileSidebar from './MobilePanel';
 
 
 
+
 const style = {
     marginTop: 10,
 };
@@ -71,11 +72,27 @@ class CategoriesList extends Component {
     }
 
     renderCategories() {
+
+        let images = [];
+
+        function getRandomArray(min,max){
+            let A= [];
+            while(max>= min) A.push(max--);
+            A.sort(function(){return .5- Math.random()});
+            return A;
+        }
+
+        function getRandomArbitrary(min, max) {
+            return Math.round(Math.random() * (max - min) + min);
+        }
+
+        images = getRandomArray(1,4);
+
         return _.map(this.props.categories, category => {
             return (
                 <div className='' key={category.id}>
                     <div key={category.id} className="wrapper">
-                        <a href={"/"}><img src={`${CAT_URL}${category.image}`}/></a>
+                        <a href={"/"}><img className={'hover01'}  src={`${CAT_URL}${category.image_pref}${getRandomArbitrary(1,4)}${category.image_post}`}/></a>
                         {category.title}
                     </div>
                 </div>
