@@ -16,6 +16,7 @@ import ActionAndroid from 'material-ui/svg-icons/action/android';
 import Search from 'material-ui/svg-icons/action/search';
 import ActionHome from 'material-ui/svg-icons/action/home';
 import CartIcon from 'material-ui/svg-icons/action/shopping-cart';
+import Dialog from 'material-ui/Dialog';
 
 const HomeIcon = (props) => (
     <SvgIcon {...props}>
@@ -65,6 +66,7 @@ export default class MobilePanel extends React.Component {
     constructor(props) {
         super(props);
         this.state = {open: false};
+        this.state = {openSearch: false};
     }
 
     handleToggle = () => this.setState({open: !this.state.open});
@@ -73,89 +75,95 @@ export default class MobilePanel extends React.Component {
 
     handleChange = (event, index, value) => this.setState({value});
 
+    handleOpenSearch = (event) => {
+        // This prevents ghost click.
+        event.preventDefault();
+
+        this.setState({
+            openSearch: true,
+            anchorEl: event.currentTarget,
+        });
+    };
+
+    handleCloseSearch = () => {
+        this.setState({
+            openSearch: false,
+        });
+    };
+
+
+
+
 
     render() {
+
+        const actions = [
+            <FlatButton
+                label="ОТМЕНА"
+                primary={true}
+                onClick={this.handleCloseSearch}
+            />,
+            <FlatButton
+                label="ИСКАТЬ!"
+                primary={true}
+                onClick={this.handleCloseSearch}
+            />,
+        ];
+
         return (
-            <MuiThemeProvider muiTheme={muiTheme} >
-            <div style={{ position: 'fixed' }}>
-                <div className={'navBarStyle_2'}>
-                    <IconButton className={'mobileMenuStyle'} style={styles.iconStyles}><Menu onClick={this.handleToggle}/></IconButton>
-                    <IconButton> <Search style={CartStyle} /> </IconButton>
-                    <TextField
-                        hintText="ИСКАТЬ ПОСТЕРЫ"
-                        //floatingLabelText="Поиск по тэгам"
-                        floatingLabelFixed={true}
-                    />
-                    <IconButton> <CartIcon style={CartStyle} /> </IconButton>
+
+            <MuiThemeProvider muiTheme={muiTheme}>
+                <div>
+                    <div className={'navBarStyle_2'} style={{ position: 'fixed' }}>
+                        <IconButton className={'mobileMenuStyle'} style={styles.iconStyles}>
+                            <Menu onClick={this.handleToggle}/>
+                        </IconButton>
+                        <IconButton onClick={this.handleOpenSearch}>
+                            <Search style={CartStyle} />
+                        </IconButton>
+                        <Dialog
+                            title="ПОИСК"
+                            actions={actions}
+                            modal={false}
+                            open={this.state.openSearch}
+                            onRequestClose={this.handleCloseSearch}
+                        >
+                            <TextField
+                                hintText="Введите название или имя тэга"
+                                //floatingLabelText="Поиск по тэгам"
+                                floatingLabelFixed={true}
+                            />
+                        </Dialog>
+                        <IconButton>
+                            <CartIcon style={CartStyle} />
+                        </IconButton>
+                    </div>
+
+                    <Drawer
+                        docked={false}
+                        width={200}
+                        open={this.state.open}
+                        onRequestChange={(open) => this.setState({open})}
+                    >
+                        <h3>Категории</h3>
+                        <MenuItem primaryText="Комиксы" />
+                        <MenuItem primaryText="Иллюстрации" />
+                        <MenuItem primaryText="Сериалы" />
+                        <MenuItem primaryText="Аниме" />
+                        <MenuItem primaryText="Винтаж" />
+                        <MenuItem primaryText="Ч/Б" />
+                        <MenuItem primaryText="Музыкальные" />
+                        <MenuItem primaryText="Лоу-Арт" />
+                        <br/>
+                        <h3>Личный кабинет</h3>
+                        <MenuItem primaryText="Регистрация" />
+                        <MenuItem primaryText="Вход" />
+                        <MenuItem onClick={this.handleClose}>Назад</MenuItem>
+                    </Drawer>
                 </div>
-                <Drawer
-                    docked={false}
-                    width={200}
-                    open={this.state.open}
-                    onRequestChange={(open) => this.setState({open})}
-                >
-                    <MenuItem primaryText="Комиксы" />
-                    <MenuItem primaryText="Иллюстрации" />
-                    <MenuItem primaryText="Сериалы" />
-                    <MenuItem primaryText="Аниме" />
-                    <MenuItem primaryText="Винтаж" />
-                    <MenuItem primaryText="Ч/Б" />
-                    <MenuItem primaryText="Музыкальные" />
-                    <MenuItem primaryText="Лоу-Арт" />
-                    <MenuItem onClick={this.handleClose}>Назад</MenuItem>
-                </Drawer>
-            </div>
             </MuiThemeProvider>
 
         );
     }
 }
 
-
-/*
-
-<MuiThemeProvider muiTheme={muiTheme}>
-            <div>
-
-
-                <AppBar
-                    className={'navBarStyle'}
-                    style={styles.barStyle}
-                    title={
-
-                        <FlatButton
-                            label="поиск постеров"
-                            labelPosition="before"
-                            primary={true}
-                            icon={<Search />}
-                        />
-
-                    }
-                    iconElementLeft={<IconButton><Menu onClick={this.handleToggle}/></IconButton>}
-                    iconElementRight={<IconButton><ShoppingCart/></IconButton>}
-                />
-
-
-                <Drawer
-                    docked={false}
-                    width={200}
-                    open={this.state.open}
-                    onRequestChange={(open) => this.setState({open})}
-                >
-                    <MenuItem primaryText="Комиксы" />
-                    <MenuItem primaryText="Иллюстрации" />
-                    <MenuItem primaryText="Сериалы" />
-                    <MenuItem primaryText="Аниме" />
-                    <MenuItem primaryText="Винтаж" />
-                    <MenuItem primaryText="Ч/Б" />
-                    <MenuItem primaryText="Музыкальные" />
-                    <MenuItem primaryText="Лоу-Арт" />
-                    <MenuItem onClick={this.handleClose}>Назад</MenuItem>
-                </Drawer>
-
-            </div>
-            </MuiThemeProvider>
-
-
-
- */
