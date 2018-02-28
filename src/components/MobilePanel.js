@@ -14,6 +14,8 @@ import TextField from 'material-ui/TextField';
 import Menu from 'material-ui/svg-icons/navigation/menu';
 import ActionAndroid from 'material-ui/svg-icons/action/android';
 import Search from 'material-ui/svg-icons/action/search';
+import ActionHome from 'material-ui/svg-icons/action/home';
+import CartIcon from 'material-ui/svg-icons/action/shopping-cart';
 
 const HomeIcon = (props) => (
     <SvgIcon {...props}>
@@ -21,17 +23,18 @@ const HomeIcon = (props) => (
     </SvgIcon>
 );
 
-const iconStyles = {
+const CartStyle = {
     marginRight: 24,
 };
+
 
 const styles = {
 
     iconStyles: {
-        color: 'white',
-        textColor: 'white',
+        color: 'rgba(100, 95, 90, 1)',
+        textColor: 'rgba(100, 95, 90, 1)',
         margin: 'auto',
-        align: 'right'
+        align: 'left'
     },
 
     barStyle: {
@@ -46,12 +49,12 @@ const styles = {
 
 const muiTheme = getMuiTheme({
     palette: {
-        background: '#373a3c',
+        background: '#020209',
         textColor: Colors.darkBlack,
-        primary1Color: '#373a3c',
+        primary1Color: '#020209',
     },
     appBar: {
-        background: '#373a3c',
+        background: '#020209',
         height: 50,
     },
 });
@@ -73,8 +76,45 @@ export default class MobilePanel extends React.Component {
 
     render() {
         return (
+            <MuiThemeProvider muiTheme={muiTheme} >
+            <div style={{ position: 'fixed' }}>
+                <div className={'navBarStyle_2'}>
+                    <IconButton className={'mobileMenuStyle'} style={styles.iconStyles}><Menu onClick={this.handleToggle}/></IconButton>
+                    <IconButton> <Search style={CartStyle} /> </IconButton>
+                    <TextField
+                        hintText="ИСКАТЬ ПОСТЕРЫ"
+                        //floatingLabelText="Поиск по тэгам"
+                        floatingLabelFixed={true}
+                    />
+                    <IconButton> <CartIcon style={CartStyle} /> </IconButton>
+                </div>
+                <Drawer
+                    docked={false}
+                    width={200}
+                    open={this.state.open}
+                    onRequestChange={(open) => this.setState({open})}
+                >
+                    <MenuItem primaryText="Комиксы" />
+                    <MenuItem primaryText="Иллюстрации" />
+                    <MenuItem primaryText="Сериалы" />
+                    <MenuItem primaryText="Аниме" />
+                    <MenuItem primaryText="Винтаж" />
+                    <MenuItem primaryText="Ч/Б" />
+                    <MenuItem primaryText="Музыкальные" />
+                    <MenuItem primaryText="Лоу-Арт" />
+                    <MenuItem onClick={this.handleClose}>Назад</MenuItem>
+                </Drawer>
+            </div>
+            </MuiThemeProvider>
 
-            <MuiThemeProvider muiTheme={muiTheme}>
+        );
+    }
+}
+
+
+/*
+
+<MuiThemeProvider muiTheme={muiTheme}>
             <div>
 
 
@@ -115,6 +155,7 @@ export default class MobilePanel extends React.Component {
 
             </div>
             </MuiThemeProvider>
-        );
-    }
-}
+
+
+
+ */

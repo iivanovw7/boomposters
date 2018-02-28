@@ -17,3 +17,16 @@
     margin-bottom: 20px;
 
 }
+
+.navBarStyle_2 {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    background: rgba(251, 246, 239, 0.9);
+    border-radius: 5px;
+
+}
+
+.mobileMenuStyle {
+
+}
