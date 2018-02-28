@@ -114,29 +114,31 @@ export default class MobilePanel extends React.Component {
 
             <MuiThemeProvider muiTheme={muiTheme}>
                 <div>
-                    <div className={'navBarStyle_2'} style={{ position: 'fixed' }}>
-                        <IconButton className={'mobileMenuStyle'} style={styles.iconStyles}>
-                            <Menu onClick={this.handleToggle}/>
-                        </IconButton>
-                        <IconButton onClick={this.handleOpenSearch}>
-                            <Search style={CartStyle} />
-                        </IconButton>
-                        <Dialog
-                            title="ПОИСК"
-                            actions={actions}
-                            modal={false}
-                            open={this.state.openSearch}
-                            onRequestClose={this.handleCloseSearch}
-                        >
-                            <TextField
-                                hintText="Введите название или имя тэга"
-                                //floatingLabelText="Поиск по тэгам"
-                                floatingLabelFixed={true}
-                            />
-                        </Dialog>
-                        <IconButton>
-                            <CartIcon style={CartStyle} />
-                        </IconButton>
+                    <div className={'mobileMenuStyle'}>
+                        <div className={'navBarStyle_2'} style={{ position: 'fixed' }}>
+                            <IconButton style={styles.iconStyles}>
+                                <Menu onClick={this.handleToggle}/>
+                            </IconButton>
+                            <IconButton onClick={this.handleOpenSearch}>
+                                <Search style={CartStyle} />
+                            </IconButton>
+                            <Dialog
+                                title="ПОИСК"
+                                actions={actions}
+                                modal={false}
+                                open={this.state.openSearch}
+                                onRequestClose={this.handleCloseSearch}
+                            >
+                                <TextField
+                                    hintText="Введите название или имя тэга"
+                                    //floatingLabelText="Поиск по тэгам"
+                                    floatingLabelFixed={true}
+                                />
+                            </Dialog>
+                            <IconButton>
+                                <CartIcon style={CartStyle} />
+                            </IconButton>
+                        </div>
                     </div>
 
                     <Drawer

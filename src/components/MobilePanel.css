@@ -22,16 +22,19 @@
     z-index: 50;
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
-    background: rgba(251, 246, 239, 1);
+    justify-content: flex-end;
+    background: rgba(251, 246, 239, 0.8);
     border-radius: 5px;
-    margin-top: 50px;
+    margin-top: 40%;
     position: fixed;
 
 }
 
 .mobileMenuStyle {
-
+    z-index: 200;
+    display: flex;
+    flex-direction: row-reverse;
+    margin-right: 5px;
 }
 
 .drawerStyle {
