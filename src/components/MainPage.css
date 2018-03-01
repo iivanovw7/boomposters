@@ -118,7 +118,7 @@
 @media screen and (min-width: 0px) and (max-width: 800px) {
 
     .container {
-        margin-right: 25px;
+        /* margin-right: 25px; */
     }
 
     .navigation {
@@ -126,7 +126,7 @@
     }
 
     .logo {
-        max-width: 550px;
+        max-width: 320px;
 
     }
 
