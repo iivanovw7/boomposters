@@ -115,6 +115,12 @@
     font-family: Roboto, sans-serif;
 }
 
+section {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
 @media screen and (min-width: 0px) and (max-width: 800px) {
 
     .container {

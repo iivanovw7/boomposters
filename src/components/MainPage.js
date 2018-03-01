@@ -122,9 +122,11 @@ class CategoriesList extends Component {
                     <NavBar/>
                 </div>
                 <div className="row">
-                    <div className="logo">
-                        <a href={"/"}><img className="logo" src={'../src/img/logo.png'}/></a>
-                    </div>
+                    <section>
+                        <div className="logo">
+                            <a href={"/"}><img className="logo" src={'../src/img/logo.png'}/></a>
+                        </div>
+                    </section>
                     <div>
                         <img className='separator' src={'../src/img/razdelitel.png'}/>
                         <span className={'separatorMobile'}><h2>BOOMPOSTERS.RU</h2></span>
