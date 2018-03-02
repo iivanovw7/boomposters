@@ -9,7 +9,8 @@ export default function() {
         { id: 6, title: 'Ч/Б', image_pref: 'monoch', image_post: '.png' },
         { id: 7, title: 'Музыкальные', image_pref: 'music', image_post: '.png' },
         { id: 8, title: 'Лоу-Арт', image_pref: 'lowart', image_post: '.png' },
-        { id: 9, title: 'Психоделика', image_pref: 'psy', image_post: '.png' }
+        { id: 9, title: 'Психоделика', image_pref: 'psy', image_post: '.png' },
+        { id: 10, title: 'Фотофоны', image_pref: 'phone', image_post: '.png' }
     ]
 }
 
