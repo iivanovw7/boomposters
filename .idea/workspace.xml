@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="32aae9fe-bd52-4257-b36f-8e045cfa2e5c" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/MainPage.css" afterPath="$PROJECT_DIR$/src/components/MainPage.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/MobilePanel.css" afterPath="$PROJECT_DIR$/src/components/MobilePanel.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/reducers/reducer_categories.js" afterPath="$PROJECT_DIR$/src/reducers/reducer_categories.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -22,7 +19,7 @@
       <file leaf-file-name="MainPage.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/components/MainPage.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1990">
+            <state relative-caret-position="1504">
               <caret line="228" column="33" lean-forward="false" selection-start-line="228" selection-start-column="33" selection-end-line="228" selection-end-column="33" />
               <folding>
                 <element signature="e#2842#3091#0" expanded="false" />
@@ -98,8 +95,8 @@
       <file leaf-file-name="MobilePanel.css" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/components/MobilePanel.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="144">
-              <caret line="23" column="27" lean-forward="true" selection-start-line="23" selection-start-column="27" selection-end-line="23" selection-end-column="27" />
+            <state relative-caret-position="378">
+              <caret line="36" column="32" lean-forward="true" selection-start-line="36" selection-start-column="32" selection-end-line="36" selection-end-column="32" />
               <folding />
             </state>
           </provider>
@@ -357,12 +354,12 @@
       <workItem from="1519839672787" duration="2547000" />
       <workItem from="1519848351890" duration="6089000" />
       <workItem from="1519902562403" duration="767000" />
-      <workItem from="1520008873169" duration="835000" />
+      <workItem from="1520008873169" duration="1189000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="196997000" />
+    <option name="totallyTimeSpent" value="197351000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -642,7 +639,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/components/MainPage.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1990">
+        <state relative-caret-position="1504">
           <caret line="228" column="33" lean-forward="false" selection-start-line="228" selection-start-column="33" selection-end-line="228" selection-end-column="33" />
           <folding>
             <element signature="e#2842#3091#0" expanded="false" />
@@ -652,8 +649,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/components/MobilePanel.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="23" column="27" lean-forward="true" selection-start-line="23" selection-start-column="27" selection-end-line="23" selection-end-column="27" />
+        <state relative-caret-position="378">
+          <caret line="36" column="32" lean-forward="true" selection-start-line="36" selection-start-column="32" selection-end-line="36" selection-end-column="32" />
           <folding />
         </state>
       </provider>
