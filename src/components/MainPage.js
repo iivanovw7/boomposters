@@ -1,10 +1,7 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
-import _ from 'lodash';
 import NavBar from "./NavBar";
-import './MainPage.css';
 import RaisedButton from 'material-ui/RaisedButton';
-import './NavBar.css';
 import IconButton from 'material-ui/IconButton';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import darkBaseTheme from 'material-ui/styles/baseThemes/darkBaseTheme';
@@ -12,8 +9,9 @@ import Whatshot from 'material-ui/svg-icons/social/whatshot';
 import ShoppingCart from 'material-ui/svg-icons/action/shopping-cart';
 import Upload from 'material-ui/svg-icons/action/backup';
 import MobileSidebar from './MobilePanel';
-
-
+import Categories from './Categories';
+import './NavBar.css';
+import './MainPage.css';
 
 
 const style = {
@@ -54,13 +52,20 @@ const footer = {
     margin: 30,
 };
 
-const CAT_URL = '../src/img/categories/';
 
 
-class CategoriesList extends Component {
+
+class MainPage extends Component {
+
+    constructor(props) {
+        super(props);
+    }
+
 
     componentDidMount() {
+
         const ele = document.getElementById('ipl-progress-indicator');
+
         if (ele) {
             setTimeout(() => {
                 ele.classList.add('available');
@@ -69,36 +74,6 @@ class CategoriesList extends Component {
                 }, 3000)
             }, 2000)
         }
-    }
-
-    renderCategories() {
-
-        let images = [];
-
-        function getRandomArray(min,max){
-            let A= [];
-            while(max>= min) A.push(max--);
-            A.sort(function(){return .5- Math.random()});
-            return A;
-        }
-
-        function getRandomArbitrary(min, max) {
-            return Math.round(Math.random() * (max - min) + min);
-        }
-
-        images = getRandomArray(1,4);
-
-        return _.map(this.props.categories, category => {
-            return (
-                <div className='' key={category.id}>
-                    <div key={category.id} className="wrapper">
-                        <a href={"/"}><img className={'hover01'}  src={`${CAT_URL}${category.image_pref}${getRandomArbitrary(1,4)}${category.image_post}`}/></a>
-                        {category.title}
-                    </div>
-                </div>
-            );
-
-        });
 
     }
 
@@ -133,9 +108,7 @@ class CategoriesList extends Component {
                     </div>
                 </div>
                 <div>
-                    <div className='categories'>
-                        {this.renderCategories()}
-                    </div>
+                    <Categories/>
                 </div>
                 <div>
                     <img className='separator' src={'../src/img/razdelitel.png'}/>
@@ -206,6 +179,8 @@ class CategoriesList extends Component {
                     </div>
                 </div>
 
+
+
             </div>
 
         );
@@ -215,15 +190,16 @@ class CategoriesList extends Component {
 
 function mapStateToProps(state) {
     return {
-        categories: state.categories
+        categories: state.categories,
+        vintage: state.vintage
     };
 }
 
-CategoriesList.childContextTypes = {
+MainPage.childContextTypes = {
     muiTheme: React.PropTypes.object.isRequired,
 };
 
-export default connect(mapStateToProps)(CategoriesList);
+export default connect(mapStateToProps)(MainPage);
 
 /*
 

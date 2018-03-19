@@ -39,6 +39,7 @@
     "react": "^0.14.9",
     "react-body-images": "^1.0.1",
     "react-dom": "^0.14.3",
+    "react-google-picker": "0.0.8",
     "react-loading-spinner": "^1.0.12",
     "react-redux": "4.3.0",
     "react-router": "^2.0.1",

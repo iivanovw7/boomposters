@@ -5,7 +5,7 @@ import {createStore, applyMiddleware} from 'redux';
 import {BrowserRouter, Route, Switch} from 'react-router-dom';
 import promise from 'redux-promise';
 import reducers from './reducers';
-import CategoriesList from './components/MainPage.js';
+import MainPage from './components/MainPage.js';
 
 
 
@@ -18,7 +18,7 @@ ReactDOM.render(
         <BrowserRouter>
             <div>
                 <Switch>
-                    <Route path="/" component={CategoriesList}/>
+                    <Route path="/" component={MainPage}/>
                 </Switch>
             </div>
         </BrowserRouter>
