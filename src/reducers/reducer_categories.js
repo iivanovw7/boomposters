@@ -20,7 +20,7 @@ export default function () {
             title: 'Сериалы',
             image_pref: 'serials',
             image_post: '.png',
-            name: 'serials'
+            name: 'series'
         },
         {
             id: 4,
