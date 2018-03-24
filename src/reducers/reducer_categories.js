@@ -6,7 +6,7 @@ export default function () {
             title: 'Комиксы',
             image_pref: 'comix',
             image_post: '.png',
-            name: 'comix'
+            name: 'comics'
         },
         {
             id: 2,
@@ -20,7 +20,7 @@ export default function () {
             title: 'Сериалы',
             image_pref: 'serials',
             image_post: '.png',
-            name: 'serials'
+            name: 'series'
         },
         {
             id: 4,
@@ -69,7 +69,7 @@ export default function () {
             title: 'Фотофоны',
             image_pref: 'phone',
             image_post: '.png',
-            name: 'phone'
+            name: 'phones'
         },
         {
             id: 11,
