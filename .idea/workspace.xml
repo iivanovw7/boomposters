@@ -392,12 +392,25 @@
       <workItem from="1521235413537" duration="616000" />
       <workItem from="1521283603808" duration="3784000" />
       <workItem from="1521293971987" duration="37594000" />
+<<<<<<< Updated upstream
       <workItem from="1521478654165" duration="1332000" />
+=======
+      <workItem from="1521478654165" duration="10955000" />
+      <workItem from="1521564514051" duration="8918000" />
+      <workItem from="1521581994017" duration="4695000" />
+      <workItem from="1521650149700" duration="13974000" />
+      <workItem from="1521745194250" duration="9588000" />
+      <workItem from="1521822379391" duration="13029000" />
+>>>>>>> Stashed changes
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
+<<<<<<< Updated upstream
     <option name="totallyTimeSpent" value="241476000" />
+=======
+    <option name="totallyTimeSpent" value="301303000" />
+>>>>>>> Stashed changes
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
