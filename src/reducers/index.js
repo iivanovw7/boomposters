@@ -1,15 +1,17 @@
 import { combineReducers } from 'redux';
 import Categories from './reducer_categories.js';
-import Vintage from './reducer_vintage';
 import ActiveCategory from './activeCategory.js';
+import PageSelected from './activeCategory.js';
+import AllPosters from './posters';
 
 
 const rootReducer = combineReducers({
 
 
     categories: Categories,
-    vintage: Vintage,
     activeCategory: ActiveCategory,
+    activePage: PageSelected,
+    allPosters: AllPosters
 
 });
 
