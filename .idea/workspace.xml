@@ -1,36 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="32aae9fe-bd52-4257-b36f-8e045cfa2e5c" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/boomposters-master.zip" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/components/MobilePanel.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/components/NavBar.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/reducers/reducer_anime.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/reducers/reducer_comix.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/reducers/reducer_ill.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/reducers/reducer_lowart.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/reducers/reducer_monoch.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/reducers/reducer_music.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/reducers/reducer_phone.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/reducers/reducer_photo.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/reducers/reducer_psy.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/reducers/reducer_serials.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/reducers/reducer_vintage.js" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/components/MobilePanel.css" afterPath="$PROJECT_DIR$/src/components/Navigation/MobilePanel.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/components/NavBar.css" afterPath="$PROJECT_DIR$/src/components/Navigation/NavBar.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/package-lock.json" afterPath="$PROJECT_DIR$/package-lock.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/package.json" afterPath="$PROJECT_DIR$/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/actions/index.js" afterPath="$PROJECT_DIR$/src/actions/index.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/Categories.js" afterPath="$PROJECT_DIR$/src/components/Categories.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/CategoryWrapper.css" afterPath="$PROJECT_DIR$/src/components/CategoryWrapper.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/CategoryWrapper.js" afterPath="$PROJECT_DIR$/src/components/CategoryWrapper.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/MainPage.css" afterPath="$PROJECT_DIR$/src/components/MainPage.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/MainPage.js" afterPath="$PROJECT_DIR$/src/components/MainPage.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/reducers/activeCategory.js" afterPath="$PROJECT_DIR$/src/reducers/activeCategory.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/reducers/index.js" afterPath="$PROJECT_DIR$/src/reducers/index.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/reducers/reducer_categories.js" afterPath="$PROJECT_DIR$/src/reducers/reducer_categories.js" />
-    </list>
+    <list default="true" id="32aae9fe-bd52-4257-b36f-8e045cfa2e5c" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -251,31 +222,6 @@
             <path>
               <item name="boomposters" type="b2602c69:ProjectViewProjectNode" />
               <item name="boomposters" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="actions" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="boomposters" type="b2602c69:ProjectViewProjectNode" />
-              <item name="boomposters" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="boomposters" type="b2602c69:ProjectViewProjectNode" />
-              <item name="boomposters" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="Navigation" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="boomposters" type="b2602c69:ProjectViewProjectNode" />
-              <item name="boomposters" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="reducers" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="boomposters" type="b2602c69:ProjectViewProjectNode" />
-              <item name="boomposters" type="462c0819:PsiDirectoryNode" />
               <item name="style" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
@@ -392,12 +338,12 @@
       <workItem from="1521581994017" duration="4695000" />
       <workItem from="1521650149700" duration="13974000" />
       <workItem from="1521745194250" duration="9588000" />
-      <workItem from="1521822379391" duration="12075000" />
+      <workItem from="1521822379391" duration="12680000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="300349000" />
+    <option name="totallyTimeSpent" value="300954000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
