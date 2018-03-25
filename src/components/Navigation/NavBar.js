@@ -46,17 +46,13 @@ const texture = {
 class NavBar extends React.Component {
 
 
-    findCategory(categoryID) {
-
-        _.findIndex(this.props.categories, { 'id' : categoryID});
-
-    }
 
     getCategories() {
         return _.map(this.props.categories, category => {
             return (
                 <MenuItem className='' key={category.id} primaryText={category.title}
-                          onClick={() => {  this.props.selectCategory(category);
+                          onClick={() => {
+                              this.props.selectCategory(category);
                 }}>
                 </MenuItem>
             );

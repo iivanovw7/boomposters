@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import _ from 'lodash';
-import CategoryWrapper from './CategoryWrapper.js';
+import CategoryWrapper from './SingleCategory/CategoryWrapper.js';
 import RaisedButton from 'material-ui/RaisedButton';
 import {bindActionCreators} from 'redux';
 import {selectCategory, pageSelector} from "../actions/index";
