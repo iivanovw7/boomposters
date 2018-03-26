@@ -84,6 +84,20 @@ class CategoryWrapper extends Component {
         )
     }
 
+    mapTags() {
+
+        return (
+            <div><strong>Тэги: </strong>
+                {_.map(this.state.tags, tag => {
+                return (
+                    <span key={tag} className={'tags'}>{tag+" "}</span>
+                )})
+                }
+            </div>
+        )
+
+    }
+
 
     renderThumbnails() {
 
@@ -155,8 +169,8 @@ class CategoryWrapper extends Component {
             return (
                 <div>
                     <h2 className="singleTile">Купить { this.state.phoneSelected  ? 'фотофон' : 'постер'}</h2>
-                    <h3>Заказать плакат или картинку: <strong>{this.state.PosterName}</strong></h3>
-                    <p>Тэги: {this.state.tags}</p>
+                    <p>Заказать плакат или картинку: <strong>{this.state.PosterName}</strong></p>
+                    <div>{this.mapTags()}</div>
                     <div className={'singlePoster'}>
                         <div>
                             {this.renderSingle()}
