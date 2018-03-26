@@ -38,6 +38,7 @@ class CategoryWrapper extends Component {
 
     }
 
+
     componentWillMount(){
         this.setState({width: window.innerWidth});
     }
@@ -145,10 +146,9 @@ class CategoryWrapper extends Component {
 
         const THUMB_URL_PREF = 'https://drive.google.com/thumbnail?id=';
         const THUMB_URL_POST_LARGE = '&sz=w450-h450';
-        const THUMB_URL_POST_SMALL = '&sz=w250-h250';
 
 
-        if (this.state.width >= 400) {
+        if (this.state.width >= 1000) {
             return (
                 <div className={'hover03'}>
                     <img src={`${THUMB_URL_PREF}${this.state.posterID}${THUMB_URL_POST_LARGE}`}/>
@@ -158,7 +158,7 @@ class CategoryWrapper extends Component {
         else {
             return (
                 <div className={'hover03'}>
-                    <img src={`${THUMB_URL_PREF}${this.state.posterID}${THUMB_URL_POST_SMALL}`}/>
+                    <img src={`${THUMB_URL_PREF}${this.state.posterID}`}/>
                 </div>
             )
         }
