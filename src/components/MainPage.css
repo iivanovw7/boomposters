@@ -1,16 +1,25 @@
 @import url('https://fonts.googleapis.com/css?family=Press+Start+2P');
 
 .hover01 {
-    -webkit-transform: scale(1);
-    transform: scale(1);
-    -webkit-transition: .3s ease-in-out;
-    transition: .3s ease-in-out;
+
+    background-size: 200% auto;
+    -webkit-background-size: 200% auto;
+    -moz-background-size: 200% auto;
+
+    background-position: -0% 0;
+    background-image: linear-gradient(to right, rgba(255,255,255,0) 50%, #908b84 300%);
+    transition: background-position 0.5s ease-out;
+    -webkit-transition: background-position 0.5s ease-out;
+    border-radius: 10px;
+
+
 }
 .hover01:hover {
-    -webkit-transform: scale(1.03);
-    transform: scale(1.03);
+    background-position: -100% 0;
     cursor: pointer;
 }
+
+
 
 @font-face {
     font-family: 'Snowstorm';
@@ -55,15 +64,14 @@
     text-decoration: solid black;
     font-size: 250%;
     font-family: 'Snowstorm', cursive;
+    cursor: pointer;
+
 
 }
 
 .wrapper img {
-    margin: 10px;
-    border-top-left-radius: 20px;
-    border-top-right-radius: 0;
-    border-bottom-right-radius: 30px;
-    border-bottom-left-radius: 0;
+    /* margin: 10px; */
+
 }
 
 .actionIconsContainer {

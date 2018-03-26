@@ -105,9 +105,9 @@ export class Categories extends Component {
 
         return _.map(this.props.categories, category => {
             return (
-                <div className='' key={category.id}>
+                <div key={category.id}>
                     <div key={category.id} className="wrapper">
-                        <a><img className={'hover01'}
+                        <a><img
                                 src={`${CAT_URL}${category.image_pref}${getRandomArbitrary(1, 4)}${category.image_post}`}
                                 onClick={() => {
                                     window.scrollTo(0, 0);
@@ -115,7 +115,12 @@ export class Categories extends Component {
                                     this.handleHideLogo()
                                 }}
                         /></a>
-                        {category.title}
+                        <div className={'hover01'}
+                             onClick={() => {
+                                 window.scrollTo(0, 0);
+                                 this.props.selectCategory(category);
+                                 this.handleHideLogo()
+                             }}>{category.title}</div>
                     </div>
                 </div>
             );

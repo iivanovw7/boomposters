@@ -24,6 +24,8 @@ class CategoryWrapper extends Component {
         super(props);
         this.state = {
 
+            width: props.width,
+
             categoryName: 'undefined',
             posterID: null,
             filename: null,
@@ -35,6 +37,12 @@ class CategoryWrapper extends Component {
         };
 
     }
+
+    componentWillMount(){
+        this.setState({width: window.innerWidth});
+    }
+
+
 
 
     SelectedPoster = (id, category, name, tags, filename, number) =>
@@ -112,8 +120,8 @@ class CategoryWrapper extends Component {
                 {_.map(posters, poster => {
                     if (poster.title === condition) {
                         return (
-                            <div className='' key={poster.number}>
-                                <img className={'hover01'} src={`${THUMB_URL}${poster.id}`}
+                            <div className='hover02' key={poster.number}>
+                                <img className={''} src={`${THUMB_URL}${poster.id}`}
                                      onClick={() => {
                                          window.scrollTo(0, 0);
                                          this.phoneCheck(condition);
@@ -136,13 +144,24 @@ class CategoryWrapper extends Component {
     renderSingle() {
 
         const THUMB_URL_PREF = 'https://drive.google.com/thumbnail?id=';
-        const THUMB_URL_POST = '&sz=w400-h400';
+        const THUMB_URL_POST_LARGE = '&sz=w450-h450';
+        const THUMB_URL_POST_SMALL = '&sz=w250-h250';
 
-        return (
-            <div>
-                <img src={`${THUMB_URL_PREF}${this.state.posterID}${THUMB_URL_POST}`}/>
-            </div>
-        )
+
+        if (this.state.width >= 400) {
+            return (
+                <div className={'hover03'}>
+                    <img src={`${THUMB_URL_PREF}${this.state.posterID}${THUMB_URL_POST_LARGE}`}/>
+                </div>
+            )
+        }
+        else {
+            return (
+                <div className={'hover03'}>
+                    <img src={`${THUMB_URL_PREF}${this.state.posterID}${THUMB_URL_POST_SMALL}`}/>
+                </div>
+            )
+        }
     }
 
 
