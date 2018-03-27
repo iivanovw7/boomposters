@@ -7,8 +7,8 @@ export default function() {
         {title:'vintage', name: '', filename: 'VIN2018-03_006.jpg', tags: [], id: '1Yg-7HaUR6yellcggIbtZdP3THpg2ylZ2', number: '4'},
         {title:'vintage', name: '', filename: 'VIN2018-03_005.jpg', tags: [], id: '17jdUr2DACH818H7Onv6TSfVYdpldfwR0', number: '5'},
         {title:'vintage', name: '', filename: 'VIN2018-03_003.jpg', tags: [], id: '1he23tJBLzEvtjxGvol87RU2RnmYxyow1', number: '6'},
-        {title:'vintage', name: '', filename: 'VIN2018-03_009.jpg', tags: [], id: '1r0NMZ7jfgx-OQlZBlbPLpvNW97qEfBwB', number: '7'},
-        {title:'vintage', name: '', filename: 'VIN2018-03_002.jpg', tags: [], id: '1Qt292MMSch0KGYzplA8hDSKW6qzmoEir', number: '8'},
+        {title:'vintage', name: 'We Can Do It', filename: 'VIN2018-03_009.jpg', tags: ['Агитация','Америка','Вертикальный','Желтый','Иллюстрации'], id: '1r0NMZ7jfgx-OQlZBlbPLpvNW97qEfBwB', number: '7'},
+        {title:'vintage', name: 'Нет!', filename: 'VIN2018-03_002.jpg', tags: ['Агитация','Вертикальный','Винтаж','Графика','Желтый','Иллюстрации','Политика','СССР' ], id: '1Qt292MMSch0KGYzplA8hDSKW6qzmoEir', number: '8'},
         {title:'vintage', name: '', filename: 'VIN2018-06_007.jpg', tags: [], id: '1f5hF4KsmN9hFT7QeSbJ-rMiqRRt3qaBi', number: '9'},
 
         {title:'ill', name: '', filename: 'ILL2018-03_005.jpg', tags: [], id: '1QqDHdfPJ9MAR6GxscpBxN_RIFH9RJs4Z', number: '1'},
@@ -18,18 +18,19 @@ export default function() {
         {title:'ill', name: '', filename: 'ILL2017-06_001.jpg', tags: [], id: '1xkzmlYJGs8YWoPBuutgOrmI8ubk2Ajmn', number: '5'},
         {title:'ill', name: '', filename: 'ILL2017-06_002.jpg', tags: [], id: '1bW-FmMZTgBlM0iaqmp_xahGSDGlfVTrf', number: '6'},
 
-        {title:'comics', name: '', filename: 'CMX2018-03_005.jpg', tags: [], id: '1qNhOoqEeQw31aogz6fisTvJxTcAXQG0l', number: '1'},
-        {title:'comics', name: '', filename: 'CMX2018-03_001.jpg', tags: [], id: '1pT2msrHMEJa7UcHzD7KoCQYKwgk20CBU', number: '2'},
-        {title:'comics', name: '', filename: 'CMX2018-03_004.jpg', tags: [], id: '1RMCQxLZt0zQAqC4fr14ZwDvkzU_ttFUP', number: '3'},
-        {title:'comics', name: '', filename: 'CMX2018-03_002.jpg', tags: [], id: '1fjvPLs1EarVojKyNvPS_57dwTjsezdjY', number: '4'},
-        {title:'comics', name: '', filename: 'CMX2018-03_003.jpg', tags: [], id: '1khCai7PRFnhOfugt6HvYW2h5UhNobNXY', number: '5'},
+        {title:'comics', name: 'Spiderman', filename: 'CMX2018-03_005.jpg', tags: ['Комикс', 'Человек паук', 'Небо', 'Гоблин', 'Фильм'], id: '1qNhOoqEeQw31aogz6fisTvJxTcAXQG0l', number: '1'},
+        {title:'comics', name: 'Ironman', filename: 'CMX2018-03_001.jpg', tags: ['Ironman', 'Момикс', 'Марвел', 'Капитан Америка'], id: '1pT2msrHMEJa7UcHzD7KoCQYKwgk20CBU', number: '2'},
+        {title:'comics', name: 'Супергерои', filename: 'CMX2018-03_004.jpg', tags: ['Марвел', 'Комикс', 'Гроза', 'Рассомаха'], id: '1RMCQxLZt0zQAqC4fr14ZwDvkzU_ttFUP', number: '3'},
+        {title:'comics', name: 'Дэдпул', filename: 'CMX2018-03_002.jpg', tags: ['Комикс', 'Дэдпул', 'Кино'], id: '1fjvPLs1EarVojKyNvPS_57dwTjsezdjY', number: '4'},
+        {title:'comics', name: 'Доктор Кто', filename: 'CMX2018-03_003.jpg', tags: ['Сериал', 'Доктор Кто', 'Кино', 'Комикс'], id: '1khCai7PRFnhOfugt6HvYW2h5UhNobNXY', number: '5'},
 
-        {title:'series', name: '', filename: 'SER2018-03_006.jpg', tags: [], id: '1ypKHOEfheGEQ-tv-nclGtdUbOYVNGiy3', number: '1'},
-        {title:'series', name: '', filename: 'SER2018-03_005.jpg', tags: [], id: '1-g2mMTo1PRwEdPw5fVi4XuII3LHEjVlT', number: '2'},
-        {title:'series', name: '', filename: 'SER2018-03_004.jpg', tags: [], id: '1LZuq0sPrGeXAVEj9v-EorGPQdBRUby8-', number: '3'},
-        {title:'series', name: '', filename: 'SER2018-03_003.jpg', tags: [], id: '1nUG-1AlZfSMaz2MqlehO7wh0PpFrUqCb', number: '4'},
-        {title:'series', name: '', filename: 'SER2018-03_002.jpg', tags: [], id: '1CbvJnkQVtN2z6wCgEK-4zB3Iv56lty9F', number: '5'},
-        {title:'series', name: '', filename: 'SER2018-03_001.jpg', tags: [], id: '1cM35TVrPzJhWS1qISNccTbHHoEO0LPYA', number: '6'},
+        {title:'series', name: 'Assassin’s Creed', filename: 'SER2018-03_006.jpg', tags: ['Постер','Ассасин','Игры','Кредо ассасина'], id: '1Zof8szRyAMqzOvQp6GaP-E_qSBoZanak', number: '1'},
+        {title:'series', name: 'Красная королева', filename: 'SER2018-03_005.jpg', tags: ['Постер', 'Вертикальный', 'Алиса', 'Кино', 'Фильм'], id: '1-g2mMTo1PRwEdPw5fVi4XuII3LHEjVlT', number: '2'},
+        {title:'series', name: 'Постер к фильму «Робокоп» 1987 года', filename: 'SER2018-03_004.jpg', tags: ['Америка','Вертикальный','Винтаж','Голубой','Город','Знаменитые','Кино'], id: '1LZuq0sPrGeXAVEj9v-EorGPQdBRUby8-', number: '3'},
+        {title:'series', name: 'Return of the Jedi (style 1)', filename: 'SER2018-03_003.jpg', tags: ['Америка','Вертикальный','Винтаж','Графика','Знаменитые'], id: '1nUG-1AlZfSMaz2MqlehO7wh0PpFrUqCb', number: '4'},
+        {title:'series', name: 'The Empire Strikes Back (Style B)', filename: 'SER2018-03_002.jpg', tags: ['Америка','Вертикальный','Винтаж','Голубой','Графика','Знаменитые','Иллюстрации'], id: '1CbvJnkQVtN2z6wCgEK-4zB3Iv56lty9F', number: '5'},
+        {title:'series', name: 'ОСЬМИНОЖКА', filename: 'SER2018-03_001.jpg', tags: ['Вертикальный','Винтаж','Графика','Иллюстрации','Кино','Красный','Постер'], id: '1cM35TVrPzJhWS1qISNccTbHHoEO0LPYA', number: '6'},
+        {title:'series', name: 'Фокс Малдер и Дана Скалли', filename: 'SER2018-03_007.jpg', tags: ['Вертикальный','Знаменитые','Кино','Любовь','Фиолетовый','Шутка'], id: '1woFmm1SScz6zfi8o-k-koKRzv1O2ZGrs', number: '7'},
 
         {filename: 'PHO2018-03_001.jpg', title:'phones', name: 'Aged Piece Of Exotic Wood', tags: ['дерево', 'фотофон', 'текстура'], id: '1NpUEl3kpIYGAib0lsiEr6Kd87tQ4w43U', number: '1'},
         {filename: 'PHO2018-03_002.jpg', title:'phones', name: 'Grungy Yet Elegant Elevation Stone III', tags: ['камень', 'текстура', 'фотофон'], id: '1HsDqMH5-fpZlArS4r0L01hJBBRQgk-Hc', number: '2'},
@@ -54,12 +55,14 @@ export default function() {
         {filename: 'PHO2018-03_019.jpg', title:'phones', name: 'Dried Cracked Mud Texture II', tags: ['текстура', 'фотофон', 'грязь'], id: '1lgfqIbU6bu__6tztM_r0V14iAli5FfO9', number: '21'},
 
 
-
         {title:'monoch', name: '', filename: 'MON2018-03_005.jpg', tags: [], id: '1rIJd96qG_bFMe_thEDD8XrZTXIdjy02G', number: '1'},
         {title:'monoch', name: '', filename: 'MON2018-03_002.jpg', tags: [], id: '1fKD-5lhVDxouyPcoOk9yXPkJuiLHjUIT', number: '2'},
         {title:'monoch', name: '', filename: 'MON2018-03_006.jpg', tags: [], id: '1ia-IzoM7p0qeowwybwhxT96izTmz8gCC', number: '3'},
         {title:'monoch', name: '', filename: 'MON2018-03_004.jpg', tags: [], id: '142m0CwrNa7mNzNSrj9lAXTAR12-HpyMj', number: '4'},
         {title:'monoch', name: '', filename: 'MON2018-03_003.jpg', tags: [], id: '1Mv8msEZfjOrkLxTLO7hbQPbeZc1HPYpC', number: '5'},
+
+
+        {title:'photo', name: 'Афганская девочка', filename: 'PHOTO2018-03_001.jpg', tags: ['Афганистан','Вертикальный','Зелёный','Знаменитые','Красный','Политика'], id: '1UBLA-1Z8feyarlWP-tv-JMLzkau6J-Ph', number: '1'},
     ]
 }
 
