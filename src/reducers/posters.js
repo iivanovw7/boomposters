@@ -1,22 +1,22 @@
 export default function() {
     return [
 
-        {title:'vintage', name: '', filename: 'VIN2018-03_001.jpg', tags: [], id: '1oxnhygjGSGv-yvYsKV3fFAa1MCxcay_N', number: '1'},
-        {title:'vintage', name: '', filename: 'VIN2018-03_004.jpg', tags: [], id: '19-zlrHt2Tq2vv7OInqeMz7r29YosPrEL', number: '2'},
-        {title:'vintage', name: '', filename: 'VIN2018-03_008.jpg', tags: [], id: '169zctdg6sIp_qmnRVeChvdNUmsYHlolX', number: '3'},
-        {title:'vintage', name: '', filename: 'VIN2018-03_006.jpg', tags: [], id: '1Yg-7HaUR6yellcggIbtZdP3THpg2ylZ2', number: '4'},
-        {title:'vintage', name: '', filename: 'VIN2018-03_005.jpg', tags: [], id: '17jdUr2DACH818H7Onv6TSfVYdpldfwR0', number: '5'},
-        {title:'vintage', name: '', filename: 'VIN2018-03_003.jpg', tags: [], id: '1he23tJBLzEvtjxGvol87RU2RnmYxyow1', number: '6'},
+        {title:'vintage', name: 'Back in the saddle', filename: 'VIN2018-03_001.jpg', tags: ['Pin-Up', 'Вертикальный', 'Винтаж','Животные', 'Реклама' ], id: '1oxnhygjGSGv-yvYsKV3fFAa1MCxcay_N', number: '1'},
+        {title:'vintage', name: 'Plenty sharp', filename: 'VIN2018-03_004.jpg', tags: ['Pin-Up', 'Вертикальный', 'Винтаж'], id: '19-zlrHt2Tq2vv7OInqeMz7r29YosPrEL', number: '2'},
+        {title:'vintage', name: 'Waisted effort', filename: 'VIN2018-03_008.jpg', tags: ['Pin-Up', 'Вертикальный', 'Винтаж'], id: '169zctdg6sIp_qmnRVeChvdNUmsYHlolX', number: '3'},
+        {title:'vintage', name: 'The finishing touch', filename: 'VIN2018-03_006.jpg', tags: ['Pin-Up', 'Вертикальный', 'Винтаж', 'Голубой', 'Желтый'], id: '1Yg-7HaUR6yellcggIbtZdP3THpg2ylZ2', number: '4'},
+        {title:'vintage', name: 'Ринглин Брос', filename: 'VIN2018-03_005.jpg', tags: ['Америка', 'Винтаж', 'Горизонтальный', 'Иллюстрации', 'Франция'], id: '17jdUr2DACH818H7Onv6TSfVYdpldfwR0', number: '5'},
+        {title:'vintage', name: 'NAPA adv. ', filename: 'VIN2018-03_003.jpg', tags: ['Pin-Up', 'Вертикальный', 'Винтаж', 'Голубой', 'Реклама'], id: '1he23tJBLzEvtjxGvol87RU2RnmYxyow1', number: '6'},
         {title:'vintage', name: 'We Can Do It', filename: 'VIN2018-03_009.jpg', tags: ['Агитация','Америка','Вертикальный','Желтый','Иллюстрации'], id: '1r0NMZ7jfgx-OQlZBlbPLpvNW97qEfBwB', number: '7'},
         {title:'vintage', name: 'Нет!', filename: 'VIN2018-03_002.jpg', tags: ['Агитация','Вертикальный','Винтаж','Графика','Желтый','Иллюстрации','Политика','СССР' ], id: '1Qt292MMSch0KGYzplA8hDSKW6qzmoEir', number: '8'},
-        {title:'vintage', name: '', filename: 'VIN2018-06_007.jpg', tags: [], id: '1f5hF4KsmN9hFT7QeSbJ-rMiqRRt3qaBi', number: '9'},
+        {title:'vintage', name: 'Девушка с велосипедом', filename: 'VIN2018-06_007.jpg', tags: ['ссср', 'постер', 'девушка', 'винтаж'], id: '1f5hF4KsmN9hFT7QeSbJ-rMiqRRt3qaBi', number: '9'},
 
-        {title:'ill', name: '', filename: 'ILL2018-03_005.jpg', tags: [], id: '1QqDHdfPJ9MAR6GxscpBxN_RIFH9RJs4Z', number: '1'},
-        {title:'ill', name: '', filename: 'ILL2018-03_006.jpg', tags: [], id: '1_yTR5k3cWoWqxVBUzT6ipZHBzLvazna2', number: '2'},
-        {title:'ill', name: '', filename: 'ILL2018-03_004.jpg', tags: [], id: '1sUBTioFORXu2MgOlVxVfJKaeVg6T7gA8', number: '3'},
-        {title:'ill', name: '', filename: 'ILL2018-03_003.jpg', tags: [], id: '1u9dd1-_sjwjj-DLe0TXI5kLAoEHOlIna', number: '4'},
-        {title:'ill', name: '', filename: 'ILL2017-06_001.jpg', tags: [], id: '1xkzmlYJGs8YWoPBuutgOrmI8ubk2Ajmn', number: '5'},
-        {title:'ill', name: '', filename: 'ILL2017-06_002.jpg', tags: [], id: '1bW-FmMZTgBlM0iaqmp_xahGSDGlfVTrf', number: '6'},
+        {title:'ill', name: 'Иллюстрация #6', filename: 'ILL2018-03_005.jpg', tags: ['иллюстрация', 'город', 'река', 'розовый', 'пальмы'], id: '1QqDHdfPJ9MAR6GxscpBxN_RIFH9RJs4Z', number: '1'},
+        {title:'ill', name: 'Иллюстрация #5', filename: 'ILL2018-03_006.jpg', tags: ['иллюстрация', 'экскаватор', 'квадратная'], id: '1_yTR5k3cWoWqxVBUzT6ipZHBzLvazna2', number: '2'},
+        {title:'ill', name: 'Иллюстрация #4', filename: 'ILL2018-03_004.jpg', tags: ['город', 'иллюстрация','кибер панк', 'серый'], id: '1sUBTioFORXu2MgOlVxVfJKaeVg6T7gA8', number: '3'},
+        {title:'ill', name: 'Иллюстрация #3', filename: 'ILL2018-03_003.jpg', tags: ['иллюстрация', 'шрифт', 'вертикальный', 'фентифлюшки'], id: '1u9dd1-_sjwjj-DLe0TXI5kLAoEHOlIna', number: '4'},
+        {title:'ill', name: 'Why so serious?', filename: 'ILL2017-06_001.jpg', tags: ['иллюстрация', 'вертикальный', 'зеленый', 'крик'], id: '1xkzmlYJGs8YWoPBuutgOrmI8ubk2Ajmn', number: '5'},
+        {title:'ill', name: 'Иллюстрация #2', filename: 'ILL2017-06_002.jpg', tags: ['портрет', 'иллюстрация', 'вино', 'Эквадор'], id: '1bW-FmMZTgBlM0iaqmp_xahGSDGlfVTrf', number: '6'},
 
         {title:'comics', name: 'Spiderman', filename: 'CMX2018-03_005.jpg', tags: ['Комикс', 'Человек паук', 'Небо', 'Гоблин', 'Фильм'], id: '1qNhOoqEeQw31aogz6fisTvJxTcAXQG0l', number: '1'},
         {title:'comics', name: 'Ironman', filename: 'CMX2018-03_001.jpg', tags: ['Ironman', 'Момикс', 'Марвел', 'Капитан Америка'], id: '1pT2msrHMEJa7UcHzD7KoCQYKwgk20CBU', number: '2'},
@@ -55,11 +55,11 @@ export default function() {
         {filename: 'PHO2018-03_019.jpg', title:'phones', name: 'Dried Cracked Mud Texture II', tags: ['текстура', 'фотофон', 'грязь'], id: '1lgfqIbU6bu__6tztM_r0V14iAli5FfO9', number: '21'},
 
 
-        {title:'monoch', name: '', filename: 'MON2018-03_005.jpg', tags: [], id: '1rIJd96qG_bFMe_thEDD8XrZTXIdjy02G', number: '1'},
-        {title:'monoch', name: '', filename: 'MON2018-03_002.jpg', tags: [], id: '1fKD-5lhVDxouyPcoOk9yXPkJuiLHjUIT', number: '2'},
-        {title:'monoch', name: '', filename: 'MON2018-03_006.jpg', tags: [], id: '1ia-IzoM7p0qeowwybwhxT96izTmz8gCC', number: '3'},
-        {title:'monoch', name: '', filename: 'MON2018-03_004.jpg', tags: [], id: '142m0CwrNa7mNzNSrj9lAXTAR12-HpyMj', number: '4'},
-        {title:'monoch', name: '', filename: 'MON2018-03_003.jpg', tags: [], id: '1Mv8msEZfjOrkLxTLO7hbQPbeZc1HPYpC', number: '5'},
+        {title:'monoch', name: 'Ланч на небоскребе', filename: 'MON2018-03_005.jpg', tags: ['Америка', 'Архитектура', 'Горизонтальный','Город', 'Пейзаж', 'Чб'], id: '1rIJd96qG_bFMe_thEDD8XrZTXIdjy02G', number: '1'},
+        {title:'monoch', name: 'Американка в Италии', filename: 'MON2018-03_002.jpg', tags: ['девушка', 'фото', 'Италия', 'винтаж'], id: '1fKD-5lhVDxouyPcoOk9yXPkJuiLHjUIT', number: '2'},
+        {title:'monoch', name: 'Джедай', filename: 'MON2018-03_006.jpg', tags: ['Звездные войны', 'фото', 'винтаж', 'лея'], id: '1ia-IzoM7p0qeowwybwhxT96izTmz8gCC', number: '3'},
+        {title:'monoch', name: 'Ганди с прялкой', filename: 'MON2018-03_004.jpg', tags: ['Горизонтальный', 'Знаменитые','Индия','Политика','Чб'], id: '142m0CwrNa7mNzNSrj9lAXTAR12-HpyMj', number: '4'},
+        {title:'monoch', name: 'Museo del Prado', filename: 'MON2018-03_003.jpg', tags: ['Горизонтальный', 'Испания', 'Чб'], id: '1Mv8msEZfjOrkLxTLO7hbQPbeZc1HPYpC', number: '5'},
 
 
         {title:'photo', name: 'Афганская девочка', filename: 'PHOTO2018-03_001.jpg', tags: ['Афганистан','Вертикальный','Зелёный','Знаменитые','Красный','Политика'], id: '1UBLA-1Z8feyarlWP-tv-JMLzkau6J-Ph', number: '1'},
