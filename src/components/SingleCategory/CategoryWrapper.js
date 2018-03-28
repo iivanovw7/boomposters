@@ -7,6 +7,9 @@ import _ from 'lodash';
 import ArrowBack from 'material-ui/svg-icons/navigation/chevron-left';
 import ArrowForward from 'material-ui/svg-icons/navigation/chevron-right';
 import Description from './description';
+import SelectField from 'material-ui/SelectField';
+import MenuItem from 'material-ui/MenuItem';
+
 
 
 import '../Navigation/NavBar.css';
@@ -17,6 +20,12 @@ import './CategoryWrapper.css';
 const style = {
     backgroundImage: 'https://drive.google.com/thumbnail?id=1qNhOoqEeQw31aogz6fisTvJxTcAXQG0l&sz=w400-h400'
 };
+
+const texture = {
+    backgroundColor: '#645f5b',
+    width: 300,
+};
+
 
 class CategoryWrapper extends Component {
 
@@ -32,12 +41,21 @@ class CategoryWrapper extends Component {
             PosterName: null,
             tags: [],
             PosterNumber: null,
-            phoneSelected: false
+            phoneSelected: false,
+
+            //Current Item specs
+            type: 1,
+            size: 'А3',
+            price: 0,
+
 
         };
 
     }
 
+
+    handleType = (event, index, type) => this.setState({type});
+    handleSize = (event, index, size) => this.setState({size});
 
     componentWillMount(){
         this.setState({width: window.innerWidth});
@@ -190,12 +208,39 @@ class CategoryWrapper extends Component {
                     <h2 className="singleTile">Купить { this.state.phoneSelected  ? 'фотофон' : 'постер'}</h2>
                     <p>Заказать плакат или картинку: <strong>{this.state.PosterName}</strong></p>
                     <div>{this.mapTags()}</div>
+                    <br/>
                     <div className={'singlePoster'}>
-                        <div>
+                        <div className={'singlePosterContent'}>
                             {this.renderSingle()}
                         </div>
-                        <div>
-                            <h2 className="singleTile">Выберете товар:</h2>
+                        <div className={'singlePosterContent'}>
+                            <h2>Выберете товар:</h2>
+                            <div className="typeWrapper">
+                                <SelectField
+                                    autoWidth={true}
+                                    value={this.state.type}
+                                    onChange={this.handleType}
+                                    className={'classTypeSelector'}
+                                    style={texture}
+                                    floatingLabelStyle={{color: 'black'}}
+                                >
+                                    <MenuItem value={1} primaryText="Плакат на постерной бумаге" />
+                                </SelectField>
+                            </div>
+                            <div className="typeWrapper">
+                                <SelectField
+                                    autoWidth={true}
+                                    value={this.state.size}
+                                    onChange={this.handleSize}
+                                    className={'classTypeSelector'}
+                                    style={texture}
+                                    floatingLabelStyle={{color: 'black'}}
+                                >
+                                    <MenuItem value={'А2'} primaryText="Печать на формате А2" />
+                                    <MenuItem value={'А3'} primaryText="Печать на формате А3" />
+                                </SelectField>
+                            </div>
+                            <p><strong>Размеры плакатов (мм):</strong> А2 420x594 / A3 297x420</p>
                         </div>
                     </div>
                     {this.renderThumbnails()}
