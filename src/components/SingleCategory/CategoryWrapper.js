@@ -9,6 +9,8 @@ import ArrowForward from 'material-ui/svg-icons/navigation/chevron-right';
 import Description from './description';
 import SelectField from 'material-ui/SelectField';
 import MenuItem from 'material-ui/MenuItem';
+import Chip from 'material-ui/Chip';
+import Avatar from 'material-ui/Avatar';
 
 
 
@@ -22,7 +24,7 @@ const style = {
 };
 
 const texture = {
-    backgroundColor: '#645f5b',
+    backgroundColor: '#303030',
     width: 300,
 };
 
@@ -114,10 +116,10 @@ class CategoryWrapper extends Component {
     mapTags() {
 
         return (
-            <div><strong>Тэги: </strong>
+            <div className={'tags'}><strong>Тэги:</strong>
                 {_.map(this.state.tags, tag => {
                 return (
-                    <span key={tag} className={'tags'}>{tag+" "}</span>
+                    <div className={'singleTag'}><Chip key={tag}>{tag+" "}</Chip></div>
                 )})
                 }
             </div>
@@ -223,6 +225,7 @@ class CategoryWrapper extends Component {
                                     className={'classTypeSelector'}
                                     style={texture}
                                     floatingLabelStyle={{color: 'black'}}
+                                    underlineStyle={{display: 'none'}}
                                 >
                                     <MenuItem value={1} primaryText="Плакат на постерной бумаге" />
                                 </SelectField>
@@ -235,12 +238,17 @@ class CategoryWrapper extends Component {
                                     className={'classTypeSelector'}
                                     style={texture}
                                     floatingLabelStyle={{color: 'black'}}
+                                    underlineStyle={{display: 'none'}}
                                 >
                                     <MenuItem value={'А2'} primaryText="Печать на формате А2" />
                                     <MenuItem value={'А3'} primaryText="Печать на формате А3" />
                                 </SelectField>
                             </div>
-                            <p><strong>Размеры плакатов (мм):</strong> А2 420x594 / A3 297x420</p>
+                            <div className={'tags'}>
+                                <strong>Размеры плакатов: </strong>
+                                <div className={'singleTag'}><Chip><Avatar size={24}>А2</Avatar>420x594 мм</Chip></div>
+                                <div className={'singleTag'}><Chip><Avatar size={24}>А3</Avatar>297x420 мм</Chip></div>
+                            </div>
                         </div>
                     </div>
                     {this.renderThumbnails()}
