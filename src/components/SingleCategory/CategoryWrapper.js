@@ -127,7 +127,7 @@ class CategoryWrapper extends Component {
 
     }
 
-
+    //Thumbnails wrapper
     renderThumbnails() {
 
         const THUMB_URL = 'https://drive.google.com/thumbnail?id=';
@@ -162,6 +162,7 @@ class CategoryWrapper extends Component {
         )
     }
 
+    //Single poster wrapper
     renderSingle() {
 
         const THUMB_URL_PREF = 'https://drive.google.com/thumbnail?id=';
