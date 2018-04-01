@@ -4,6 +4,7 @@ import RaisedButton from 'material-ui/RaisedButton';
 import {selectCategory, pageSelector} from "../../actions/index";
 import {bindActionCreators} from 'redux';
 
+import './description.css';
 
 const style = {};
 
@@ -19,11 +20,22 @@ export class Description extends Component {
         switch (category) {
             case 'comics':
                 return (
-                    <div><p>описание недоступно</p></div>
+                    <div className={'descriptionWrapper'}>
+                        <div><p><strong>Комиксы </strong>за последние несколько лет, кажется, окончательно превратились из развлечения
+                            для подростков и гиков в чтение для вполне респектабельной публики.</p>
+                            <p>На русском языке выходят не только супергеройские бестселлеры и манга, но и толстые французские графические романы,
+                                подарочные издания американской классики, собственно российские комиксы, и много чего еще.</p>
+                            <p>Проще всего вводить комиксы в интерьер в формате постера.</p>
+                            <p>Принтами не обязательно украшать стены, можно разместить их, например, на фасадах шкафов.</p>
+                        </div>
+                        <div>
+                            <img src={'../src/img/comixDes1.jpg'}/>
+                        </div>
+                    </div>
                 );
             case 'ill':
                 return (
-                    <div><p>описание недоступно</p></div>
+                    <div></div>
                 );
             case 'phones':
                 return (
@@ -40,15 +52,15 @@ export class Description extends Component {
                 );
             case 'photo':
                 return (
-                    <div><p>Сегодня фото постеры в стиле фотографии бывают черно-белыми,
+                    <div><p>Сегодня <strong> фото постеры </strong> в стиле фотографии бывают черно-белыми,
                         и цветными, и с применением каких-либо фильтров и компьютерных технологий.
-                        <strong>Купить фотопостеры</strong> вы можете в интернет-магазине Бумпостерс
+                        <strong> Купить фотопостеры </strong> вы можете в интернет-магазине Бумпостерс
                         и шикарно обогатить ваш интерьер известным или не очень снимком. В нашем каталоге несколько тысяч изображеий.</p>
                     </div>
                 );
             case 'serials':
                 return (
-                    <div><p>описание недоступно</p></div>
+                    <div></div>
                 );
             case 'monoch':
                 return (
@@ -60,27 +72,27 @@ export class Description extends Component {
                 );
             case 'anime':
                 return (
-                    <div><p>описание недоступно</p></div>
+                    <div></div>
                 );
             case 'vinatge':
                 return (
-                    <div><p>описание недоступно</p></div>
+                    <div></div>
                 );
             case 'music':
                 return (
-                    <div><p>описание недоступно</p></div>
+                    <div></div>
                 );
             case 'psy':
                 return (
-                    <div><p>описание недоступно</p></div>
+                    <div></div>
                 );
             case 'lowart':
                 return (
-                    <div><p>описание недоступно</p></div>
+                    <div></div>
                 );
             default:
                 return (
-                    <div><p>описание недоступно</p></div>
+                    <div></div>
                 )
         }
     }

@@ -4,6 +4,10 @@ import RaisedButton from 'material-ui/RaisedButton';
 import ShoppingCart from 'material-ui/svg-icons/action/shopping-cart';
 import Whatshot from 'material-ui/svg-icons/social/whatshot';
 import Upload from 'material-ui/svg-icons/action/backup';
+import {bindActionCreators} from 'redux';
+import {pageSelector} from "../../actions/index";
+import {connect} from 'react-redux';
+
 
 
 import '../MainPage.css';
@@ -41,7 +45,7 @@ const styles = {
     },
 };
 
-export default class MainFooter extends Component {
+export class MainFooter extends Component {
 
     render() {
         return (
@@ -80,6 +84,10 @@ export default class MainFooter extends Component {
                             labelPosition="before"
                             icon={<Upload/>}
                             style={styles.button}
+                            onClick={() => {
+                                window.scrollTo(0, 0);
+                                this.props.selectPage('Uploader')
+                            }}
                         />
                     </div>
                 </div>
@@ -105,3 +113,25 @@ export default class MainFooter extends Component {
         )
     }
 }
+
+function mapStateToProps(state) {
+    return {
+        categories: state.categories,
+        vintage: state.vintage,
+        selected: state.activeCategory,
+        page: state.activePage
+    };
+}
+
+
+function mapDispatchToProps(dispatch) {
+
+
+    return bindActionCreators({
+
+        selectPage: pageSelector
+
+    }, dispatch)
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(MainFooter);

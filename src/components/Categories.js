@@ -5,6 +5,7 @@ import CategoryWrapper from './SingleCategory/CategoryWrapper.js';
 import RaisedButton from 'material-ui/RaisedButton';
 import {bindActionCreators} from 'redux';
 import {selectCategory, pageSelector} from "../actions/index";
+import { Uploader } from './UploadPoster.js'
 import Whatshot from 'material-ui/svg-icons/social/whatshot';
 import ShoppingCart from 'material-ui/svg-icons/action/shopping-cart';
 import Upload from 'material-ui/svg-icons/action/backup';
@@ -46,6 +47,11 @@ export class Categories extends Component {
     handleShowLogo = () => this.setState({showLogo: true});
 
     logoWrapper() {
+        if (this.props.page === 'Uploader') {
+            return (
+                <Uploader/>
+            )
+        }
         if (this.props.page !== 'MainPage' || this.showLogo === false) {
             return (
                 <div>

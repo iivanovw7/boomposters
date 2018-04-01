@@ -1,0 +1,55 @@
+@media screen and (min-width: 0px) and (max-width: 800px) {
+
+    .wrapperUpload {
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin-bottom: 20px;
+
+    }
+
+}
+
+
+@media screen and (min-width: 800px)  {
+
+    .wrapperUpload {
+
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        margin-bottom: 100px;
+
+    }
+
+    .wrapperUpload div{
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+    }
+
+
+}
+
+.singleBlock {
+    margin-left: 20px;
+    margin-right: 20px;
+    text-align: left;
+}
+
+.uploadBlock {
+    min-width: 300px;
+}
+
+.uploadZone {
+    border: 2px dashed #020209;
+    border-radius: 20px;
+    width: 250px;
+    height: 200px;
+    margin-top: 10px;
+    background-color: rgba(4, 4, 37, 0.4);
+    text-align: center;
+}

@@ -34,9 +34,7 @@ const CartIcon = (props) => (
     </SvgIcon>
 );
 
-const style = {
-};
-
+const style = {};
 const texture = {
     backgroundColor: '#645f5b'
 };
@@ -77,6 +75,7 @@ class NavBar extends React.Component {
                         { this.getCategories() }
                     </IconMenu>
                     <RaisedButton label="Главная" style={style} onClick={() =>  this.props.selectPage('MainPage') }  />
+                    <RaisedButton label="Свой постер" style={style} onClick={() =>  this.props.selectPage('Uploader') }  />
                 </ToolbarGroup>
                 <ToolbarGroup>
                     <IconButton> <HomeIcon style={iconStyles} /> </IconButton>
