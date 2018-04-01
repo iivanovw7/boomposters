@@ -261,7 +261,7 @@ class CategoryWrapper extends Component {
         return (
 
             <div>
-                <h2 className="wrapper">{this.props.selected.title}</h2>
+                <h2 className="singleTile">{this.props.selected.title}</h2>
                 <div className={'textBlock'}><Description/></div>
                 <div> {this.renderThumbnails()} </div>
             </div>
