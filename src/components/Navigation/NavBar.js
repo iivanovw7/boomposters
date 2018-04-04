@@ -16,6 +16,7 @@ import {bindActionCreators} from 'redux';
 import {selectCategory, pageSelector} from "../../actions/index";
 
 
+
 import './NavBar.css';
 
 const iconStyles = {
@@ -75,7 +76,7 @@ class NavBar extends React.Component {
                         { this.getCategories() }
                     </IconMenu>
                     <RaisedButton label="Главная" style={style} onClick={() =>  this.props.selectPage('MainPage') }  />
-                    <RaisedButton label="Свой постер" style={style} onClick={() =>  this.props.selectPage('Uploader') }  />
+                    <RaisedButton label="Загрузить" style={style} onClick={() =>  this.props.selectPage('Uploader') }  />
                 </ToolbarGroup>
                 <ToolbarGroup>
                     <IconButton> <HomeIcon style={iconStyles} /> </IconButton>

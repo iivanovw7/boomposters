@@ -22,7 +22,7 @@ export default function() {
         {title:'comics', name: 'Ironman', filename: 'CMX2018-03_001.jpg', tags: ['Ironman', 'Момикс', 'Марвел', 'Капитан Америка'], id: '1pT2msrHMEJa7UcHzD7KoCQYKwgk20CBU', number: '2'},
         {title:'comics', name: 'Супергерои', filename: 'CMX2018-03_004.jpg', tags: ['Марвел', 'Комикс', 'Гроза', 'Рассомаха'], id: '1RMCQxLZt0zQAqC4fr14ZwDvkzU_ttFUP', number: '3'},
         {title:'comics', name: 'Дэдпул', filename: 'CMX2018-03_002.jpg', tags: ['Комикс', 'Дэдпул', 'Кино'], id: '1fjvPLs1EarVojKyNvPS_57dwTjsezdjY', number: '4'},
-        {title:'comics', name: 'Доктор Кто', filename: 'CMX2018-03_003.jpg', tags: ['Сериал', 'Доктор Кто', 'Кино', 'Комикс'], id: '1khCai7PRFnhOfugt6HvYW2h5UhNobNXY', number: '5'},
+        {title:'comics', name: 'Доктор Стрендж', filename: 'CMX2018-03_003.jpg', tags: ['Сериал', 'Доктор Стрендж', 'Кино', 'Комикс'], id: '1khCai7PRFnhOfugt6HvYW2h5UhNobNXY', number: '5'},
 
         {title:'series', name: 'Assassin’s Creed', filename: 'SER2018-03_006.jpg', tags: ['Постер','Ассасин','Игры','Кредо ассасина'], id: '1Zof8szRyAMqzOvQp6GaP-E_qSBoZanak', number: '1'},
         {title:'series', name: 'Красная королева', filename: 'SER2018-03_005.jpg', tags: ['Постер', 'Вертикальный', 'Алиса', 'Кино', 'Фильм'], id: '1-g2mMTo1PRwEdPw5fVi4XuII3LHEjVlT', number: '2'},

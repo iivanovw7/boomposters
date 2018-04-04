@@ -50,7 +50,10 @@ class CategoryWrapper extends Component {
             size: 'А3',
             price: 0,
 
-
+            //Last viewed posters
+            viewedPosters: {},
+            similarPosters: {},
+            similarTags: {}
         };
 
     }
@@ -87,7 +90,7 @@ class CategoryWrapper extends Component {
         )
     }
 
-
+    //Page Navigation Menu
     showMenu() {
         return (
             <div className={'showMenu'}>
@@ -119,7 +122,7 @@ class CategoryWrapper extends Component {
             <div className={'tags'}><strong>Тэги:</strong>
                 {_.map(this.state.tags, tag => {
                 return (
-                    <div className={'singleTag'}><Chip key={tag}>{tag+" "}</Chip></div>
+                    <div className={'singleTag'} key={tag}><Chip>{tag+" "}</Chip></div>
                 )})
                 }
             </div>
@@ -152,6 +155,7 @@ class CategoryWrapper extends Component {
                                              poster.tags,
                                              poster.filename,
                                              poster.number);
+                                         {this.addViewed(poster)}
                                      }}
                                 />
                             </div>
@@ -184,6 +188,86 @@ class CategoryWrapper extends Component {
             )
         }
     }
+
+    //Last viewed posters
+
+    addViewed(poster) {
+
+        if (_.includes(this.state.viewedPosters, poster) === true) {
+        }
+
+        else if (this.state.viewedPosters.length >= 4) {
+            {this.state.viewedPosters.shift()}
+            this.setState({
+                viewedPosters: [...this.state.viewedPosters, poster]
+            });
+        }
+
+        else {
+            this.setState({
+                viewedPosters: [...this.state.viewedPosters, poster]
+            });
+        }
+
+    }
+
+    renderLastPosters() {
+
+        const THUMB_URL = 'https://drive.google.com/thumbnail?id=';
+        const condition = this.props.selected.name;
+
+        if (this.state.viewedPosters.length >= 4) {
+
+            return(
+                <div className={'viewedPosters'}>
+                    <h2 className="singleTile">Недавно просмотренные</h2>
+                    <div className={'grid'}>
+                        {_.map(this.state.viewedPosters, viewedPoster => {
+                            return (
+                                <div className='hover02' key={viewedPoster.filename}>
+                                    <img className={''} src={`${THUMB_URL}${viewedPoster.id}`}
+                                         onClick={() => {
+                                             window.scrollTo(0, 0);
+                                             this.phoneCheck(condition);
+                                             this.SelectedPoster(viewedPoster.id,
+                                                 condition,
+                                                 viewedPoster.name,
+                                                 viewedPoster.tags,
+                                                 viewedPoster.filename,
+                                                 viewedPoster.number);
+                                         }}
+                                    />
+                                </div>
+                            )
+                        })}
+                    </div>
+                </div>
+            )
+
+        }
+    }
+
+    //Render similar Posters
+
+    renderSimilar() {
+
+        const THUMB_URL = 'https://drive.google.com/thumbnail?id=';
+        const condition = this.props.selected.name;
+        let posters = this.props.posters;
+
+
+        return (
+            <div>
+                <h2 className="singleTile">Похожие постеры</h2>
+                <div className={'grid'}>
+
+                </div>
+            </div>
+        )
+
+
+    }
+
 
 
     render() {
@@ -253,6 +337,8 @@ class CategoryWrapper extends Component {
                         </div>
                     </div>
                     {this.renderThumbnails()}
+                    {this.renderSimilar()}
+                    {this.renderLastPosters()}
                 </div>
             )
 
@@ -287,7 +373,7 @@ function mapDispatchToProps(dispatch) {
     return bindActionCreators({
 
         selectCategory: selectCategory,
-        selectPage: pageSelector,
+        selectPage: pageSelector
 
 
     }, dispatch)

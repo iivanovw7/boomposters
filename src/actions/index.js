@@ -11,3 +11,4 @@ export function pageSelector(page) {
         payload: page
     }
 }
+

@@ -9,6 +9,8 @@ import MainPage from './components/MainPage.js';
 
 
 
+
+
 const createStoreWithMiddleware = applyMiddleware(promise)(createStore);
 
 
