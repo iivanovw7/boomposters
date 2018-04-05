@@ -29,7 +29,7 @@ export default function() {
         {title:'series', name: 'Постер к фильму «Робокоп» 1987 года', filename: 'SER2018-03_004.jpg', tags: ['Америка','Вертикальный','Винтаж','Голубой','Город','Знаменитые','Кино'], id: '1LZuq0sPrGeXAVEj9v-EorGPQdBRUby8-', number: '3'},
         {title:'series', name: 'Return of the Jedi (style 1)', filename: 'SER2018-03_003.jpg', tags: ['Америка','Вертикальный','Винтаж','Графика','Знаменитые'], id: '1nUG-1AlZfSMaz2MqlehO7wh0PpFrUqCb', number: '4'},
         {title:'series', name: 'The Empire Strikes Back (Style B)', filename: 'SER2018-03_002.jpg', tags: ['Америка','Вертикальный','Винтаж','Голубой','Графика','Знаменитые','Иллюстрации'], id: '1CbvJnkQVtN2z6wCgEK-4zB3Iv56lty9F', number: '5'},
-        {title:'series', name: 'ОСЬМИНОЖКА', filename: 'SER2018-03_001.jpg', tags: ['Вертикальный','Винтаж','Графика','Иллюстрации','Кино','Красный','Постер'], id: '1cM35TVrPzJhWS1qISNccTbHHoEO0LPYA', number: '6'},
+        {title:'series', name: 'ОСЬМИНОЖКА', filename: 'SER2018-03_001.jpg', tags: ['Вертикальный','Графика','Иллюстрации','Кино','Красный','Постер'], id: '1cM35TVrPzJhWS1qISNccTbHHoEO0LPYA', number: '6'},
         {title:'series', name: 'Фокс Малдер и Дана Скалли', filename: 'SER2018-03_007.jpg', tags: ['Вертикальный','Знаменитые','Кино','Любовь','Фиолетовый','Шутка'], id: '1woFmm1SScz6zfi8o-k-koKRzv1O2ZGrs', number: '7'},
 
         {filename: 'PHO2018-03_001.jpg', title:'phones', name: 'Aged Piece Of Exotic Wood', tags: ['дерево', 'фотофон', 'текстура'], id: '1NpUEl3kpIYGAib0lsiEr6Kd87tQ4w43U', number: '1'},
