@@ -255,17 +255,25 @@ class CategoryWrapper extends Component {
         const THUMB_URL = 'https://drive.google.com/thumbnail?id=';
         const condition = this.props.selected.name;
         let posters = this.props.posters;
-        let count = 0;
+        let rendered = 0;
+
+        function counter() {
+            return rendered++;
+        }
+
 
         return (
             <div>
                 <h2 className="singleTile">Похожие постеры</h2>
                 <div className={'grid'}>
                     {_.map(posters, poster => {
-                        if (_.intersection(this.state.tags, poster.tags).length > 1 && count <= 3 )
+                        if (_.intersection(this.state.tags, poster.tags).length > 1 && rendered <= 3 )
+                        {
+
                             return (
                                 <div className='hover02' key={poster.filename}>
                                     <img className={''} src={`${THUMB_URL}${poster.id}`}
+                                         onshow={counter()}
                                          onClick={() => {
                                              window.scrollTo(0, 0);
                                              this.phoneCheck(condition);
@@ -276,10 +284,11 @@ class CategoryWrapper extends Component {
                                                  poster.filename,
                                                  poster.number);
                                          }}
-                                         onLoad={count++}
+
                                     />
                                 </div>
                             );
+                        }
                     })}
                 </div>
             </div>

@@ -9,6 +9,16 @@
 
     }
 
+    .uploadZone {
+        border: 2px dashed #020209;
+        border-radius: 5px;
+        width: 250px;
+        height: 35px;
+        margin-top: 10px;
+        background-color: rgba(4, 4, 37, 0.4);
+        text-align: center;
+    }
+
 }
 
 
@@ -31,6 +41,16 @@
 
     }
 
+    .uploadZone {
+        border: 2px dashed #020209;
+        border-radius: 5px;
+        width: 250px;
+        height: 200px;
+        margin-top: 10px;
+        background-color: rgba(4, 4, 37, 0.4);
+        text-align: center;
+    }
+
 
 }
 
@@ -42,15 +62,10 @@
 
 .uploadBlock {
     min-width: 300px;
+    display: grid;
+    flex-direction: column;
+    justify-content: center;
 }
 
-.uploadZone {
-    border: 2px dashed #020209;
-    border-radius: 5px;
-    width: 250px;
-    height: 200px;
-    margin-top: 10px;
-    background-color: rgba(4, 4, 37, 0.4);
-    text-align: center;
-}
+
 
