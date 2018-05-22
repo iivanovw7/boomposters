@@ -24,6 +24,8 @@ export default function() {
         {title:'comics', name: 'Дэдпул', filename: 'CMX2018-03_002.jpg', tags: ['Комикс', 'Дэдпул', 'Кино'], id: '1fjvPLs1EarVojKyNvPS_57dwTjsezdjY', number: '4'},
         {title:'comics', name: 'Доктор Стрендж', filename: 'CMX2018-03_003.jpg', tags: ['Сериал', 'Доктор Стрендж', 'Кино', 'Комикс'], id: '1khCai7PRFnhOfugt6HvYW2h5UhNobNXY', number: '5'},
 
+        //---------------------------------------------------------//
+
         {title:'series', name: 'Assassin’s Creed', filename: 'SER2018-03_006.jpg', tags: ['Постер','Ассасин','Игры','Кредо ассасина'], id: '1Zof8szRyAMqzOvQp6GaP-E_qSBoZanak', number: '1'},
         {title:'series', name: 'Красная королева', filename: 'SER2018-03_005.jpg', tags: ['Постер', 'Вертикальный', 'Алиса', 'Кино', 'Фильм'], id: '1-g2mMTo1PRwEdPw5fVi4XuII3LHEjVlT', number: '2'},
         {title:'series', name: 'Постер к фильму «Робокоп» 1987 года', filename: 'SER2018-03_004.jpg', tags: ['Америка','Вертикальный','Винтаж','Голубой','Город','Знаменитые','Кино'], id: '1LZuq0sPrGeXAVEj9v-EorGPQdBRUby8-', number: '3'},

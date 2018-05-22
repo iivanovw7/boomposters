@@ -11,7 +11,7 @@ import SelectField from 'material-ui/SelectField';
 import MenuItem from 'material-ui/MenuItem';
 import Chip from 'material-ui/Chip';
 import Avatar from 'material-ui/Avatar';
-
+import axios from 'axios'
 
 
 import '../Navigation/NavBar.css';
@@ -26,6 +26,19 @@ const style = {
 const texture = {
     backgroundColor: '#303030',
     width: 300,
+};
+
+const SlTexture = {
+    backgroundColor: '#303030',
+    width: 200,
+    maxHeight: 36,
+    fontSize: '1.0em',
+    marginLeft: 10,
+    marginRight: 20
+};
+
+const MenuStyle = {
+    marginBottom: 10,
 };
 
 
@@ -53,14 +66,24 @@ class CategoryWrapper extends Component {
             //Last viewed posters
             viewedPosters: {},
             similarPosters: {},
-            similarTags: []
+            similarTags: [],
+
+            //PagesSplitter
+            postersPerPage: 24,
+
+
+            boomPosters: []
+
         };
 
     }
 
 
+
+
     handleType = (event, index, type) => this.setState({type});
     handleSize = (event, index, size) => this.setState({size});
+    handlePostersPerPage = (event, index, number) => this.setState({number});
 
     componentWillMount(){
         this.setState({width: window.innerWidth});
@@ -90,20 +113,49 @@ class CategoryWrapper extends Component {
         )
     }
 
+    componentDidMount() {
+
+        let self = this;
+        axios.get(`http://localhost:8181/posters`)
+            .then(function (response) {
+                console.log(response);
+                self.setState({boomPosters : response.data})
+            })
+            .catch(function (error) {
+                console.log(error)
+            });
+
+        console.log(this.state.boomPosters)
+    }
+
     //Page Navigation Menu
+
     showMenu() {
         return (
             <div className={'showMenu'}>
                 <div>
                 </div>
-                <div>
+                <div className={'selectorBlock'}>
                     <RaisedButton
                         className={'pageButton'}
                         icon={<ArrowBack/>}
                         value={1}
                         labelPosition="before"
-                        onClick={console.log(this.props.selected)}
                     />
+                    <SelectField
+                        autoWidth={true}
+                        floatingLabelFixed={true}
+                        value={this.state.postersPerPage}
+                        onChange={this.handlePostersPerPage}
+                        className={''}
+                        style={SlTexture}
+                        floatingLabelStyle={{color: 'black'}}
+                        underlineStyle={{display: 'none'}}
+                    >
+                        <MenuItem  value={12} primaryText="12 на странице" />
+                        <MenuItem  value={24} primaryText="24 на странице" />
+                        <MenuItem  value={48} primaryText="48 на странице" />
+                    </SelectField>
                     <RaisedButton
                         className={'pageButton'}
                         icon={<ArrowForward/>}
@@ -135,7 +187,7 @@ class CategoryWrapper extends Component {
 
         const THUMB_URL = 'https://drive.google.com/thumbnail?id=';
         const condition = this.props.selected.name;
-        let posters = this.props.posters;
+        let posters = this.state.boomPosters;
 
         return (
 
@@ -254,7 +306,7 @@ class CategoryWrapper extends Component {
 
         const THUMB_URL = 'https://drive.google.com/thumbnail?id=';
         const condition = this.props.selected.name;
-        let posters = this.props.posters;
+        let posters = this.state.boomPosters;
         let rendered = 0;
 
         function counter() {
@@ -272,7 +324,8 @@ class CategoryWrapper extends Component {
 
                             return (
                                 <div className='hover02' key={poster.filename}>
-                                    <img className={''} src={`${THUMB_URL}${poster.id}`}
+                                    <img className={''}
+                                         src={`${THUMB_URL}${poster.id}`}
                                          onshow={counter()}
                                          onClick={() => {
                                              window.scrollTo(0, 0);
@@ -284,8 +337,8 @@ class CategoryWrapper extends Component {
                                                  poster.filename,
                                                  poster.number);
                                          }}
-
                                     />
+
                                 </div>
                             );
                         }
@@ -365,6 +418,7 @@ class CategoryWrapper extends Component {
                             </div>
                         </div>
                     </div>
+                    {this.showMenu()}
                     {this.renderThumbnails()}
                     {this.renderSimilar()}
                     {this.renderLastPosters()}

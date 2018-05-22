@@ -27,7 +27,9 @@
     "webpack-dev-server": "^1.14.0"
   },
   "dependencies": {
+    "axios": "^0.18.0",
     "babel-preset-stage-1": "^6.1.18",
+    "cors": "^2.8.4",
     "css-loader": "^0.28.9",
     "file-loader": "^1.1.6",
     "halogenium": "^2.2.3",

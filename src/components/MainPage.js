@@ -9,6 +9,9 @@ import {bindActionCreators} from 'redux';
 import {selectCategory, pageSelector} from "../actions/index";
 import ScrollUp from './Functions/ScrollUp';
 import Footer from './Footer/MainFooter';
+import axios from 'axios'
+
+
 
 
 import './Navigation/NavBar.css';
@@ -24,6 +27,10 @@ class MainPage extends Component {
 
     constructor(props) {
         super(props);
+
+        this.state = {
+            boomPosters: []
+        }
     }
 
 
@@ -41,8 +48,27 @@ class MainPage extends Component {
         }
 
         {
-            this.props.selectPage('MainPage')
+            this.props.selectPage('MainPage');
+
+
+            /*
+
+            let self = this;
+            axios.get(`http://localhost:8181/posters`)
+                .then(function (response) {
+                    console.log(response);
+                    self.setState({boomPosters : response.data})
+                })
+                .catch(function (error) {
+                    console.log(error)
+                });
+
+            console.log(this.state.boomPosters)
+
+             */
+
         }
+
 
     }
 
