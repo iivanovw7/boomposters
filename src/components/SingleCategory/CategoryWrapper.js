@@ -191,7 +191,7 @@ class CategoryWrapper extends Component {
 
         return (
 
-            <div className="grid">
+            <div className="grid fade-in-element">
 
                 {_.map(posters, poster => {
                     if (poster.title === condition) {
@@ -274,7 +274,7 @@ class CategoryWrapper extends Component {
             return(
                 <div className={'viewedPosters'}>
                     <h2 className="singleTile">Недавно просмотренные</h2>
-                    <div className={'grid'}>
+                    <div className={'grid fade-in-element'}>
                         {_.map(this.state.viewedPosters, viewedPoster => {
                             return (
                                 <div className='hover02' key={viewedPoster.filename}>

@@ -24,8 +24,6 @@ export default function() {
         {title:'comics', name: 'Дэдпул', filename: 'CMX2018-03_002.jpg', tags: ['Комикс', 'Дэдпул', 'Кино'], id: '1fjvPLs1EarVojKyNvPS_57dwTjsezdjY', number: '4'},
         {title:'comics', name: 'Доктор Стрендж', filename: 'CMX2018-03_003.jpg', tags: ['Сериал', 'Доктор Стрендж', 'Кино', 'Комикс'], id: '1khCai7PRFnhOfugt6HvYW2h5UhNobNXY', number: '5'},
 
-        //---------------------------------------------------------//
-
         {title:'series', name: 'Assassin’s Creed', filename: 'SER2018-03_006.jpg', tags: ['Постер','Ассасин','Игры','Кредо ассасина'], id: '1Zof8szRyAMqzOvQp6GaP-E_qSBoZanak', number: '1'},
         {title:'series', name: 'Красная королева', filename: 'SER2018-03_005.jpg', tags: ['Постер', 'Вертикальный', 'Алиса', 'Кино', 'Фильм'], id: '1-g2mMTo1PRwEdPw5fVi4XuII3LHEjVlT', number: '2'},
         {title:'series', name: 'Постер к фильму «Робокоп» 1987 года', filename: 'SER2018-03_004.jpg', tags: ['Америка','Вертикальный','Винтаж','Голубой','Город','Знаменитые','Кино'], id: '1LZuq0sPrGeXAVEj9v-EorGPQdBRUby8-', number: '3'},
@@ -33,6 +31,7 @@ export default function() {
         {title:'series', name: 'The Empire Strikes Back (Style B)', filename: 'SER2018-03_002.jpg', tags: ['Америка','Вертикальный','Винтаж','Голубой','Графика','Знаменитые','Иллюстрации'], id: '1CbvJnkQVtN2z6wCgEK-4zB3Iv56lty9F', number: '5'},
         {title:'series', name: 'ОСЬМИНОЖКА', filename: 'SER2018-03_001.jpg', tags: ['Вертикальный','Графика','Иллюстрации','Кино','Красный','Постер'], id: '1cM35TVrPzJhWS1qISNccTbHHoEO0LPYA', number: '6'},
         {title:'series', name: 'Фокс Малдер и Дана Скалли', filename: 'SER2018-03_007.jpg', tags: ['Вертикальный','Знаменитые','Кино','Любовь','Фиолетовый','Шутка'], id: '1woFmm1SScz6zfi8o-k-koKRzv1O2ZGrs', number: '7'},
+
 
         {filename: 'PHO2018-03_001.jpg', title:'phones', name: 'Aged Piece Of Exotic Wood', tags: ['дерево', 'фотофон', 'текстура'], id: '1NpUEl3kpIYGAib0lsiEr6Kd87tQ4w43U', number: '1'},
         {filename: 'PHO2018-03_002.jpg', title:'phones', name: 'Grungy Yet Elegant Elevation Stone III', tags: ['камень', 'текстура', 'фотофон'], id: '1HsDqMH5-fpZlArS4r0L01hJBBRQgk-Hc', number: '2'},

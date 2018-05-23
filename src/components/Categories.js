@@ -62,7 +62,7 @@ export class Categories extends Component {
         else {
             return (
                 <section>
-                    <div className="logo">
+                    <div className="logo fade-in-element">
                         <a href={"/"}><img className="logo" src={'../src/img/logo.png'}/></a>
                     </div>
                     <img className='separator' src={'../src/img/razdelitel.png'}/>
