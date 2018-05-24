@@ -54,6 +54,14 @@
     font-size: 300%;
 }
 
+.singleInfoWrapper {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+
+}
+
 @media screen and (min-width: 0px) and (max-width: 800px) {
     .singlePoster {
         display: flex;

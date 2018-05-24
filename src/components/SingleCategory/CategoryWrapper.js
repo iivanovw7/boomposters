@@ -57,6 +57,7 @@ class CategoryWrapper extends Component {
             tags: [],
             PosterNumber: null,
             phoneSelected: false,
+            posted_at: null,
 
             //Current Item specs
             type: 1,
@@ -83,16 +84,24 @@ class CategoryWrapper extends Component {
 
     handleType = (event, index, type) => this.setState({type});
     handleSize = (event, index, size) => this.setState({size});
-    handlePostersPerPage = (event, index, number) => this.setState({number});
+
+    handlePostersPerPage = (event, index, postersPerPage) => this.setState({postersPerPage: postersPerPage});
 
     componentWillMount(){
         this.setState({width: window.innerWidth});
     }
 
 
+    trimDate(value) {
+        let  sDate = value.toString();
+        let formattedDate = sDate.substr(0, sDate.length-14);
+
+        return formattedDate;
+    }
 
 
-    SelectedPoster = (id, category, name, tags, filename, number) =>
+
+    SelectedPoster = (id, category, name, tags, filename, number, posted_at) =>
         this.setState({
             posterID: id,
             categoryName: category,
@@ -100,6 +109,7 @@ class CategoryWrapper extends Component {
             PosterName: name,
             tags: tags,
             PosterNumber: number,
+            posted_at: posted_at,
         });
 
     phoneCheck(category) {
@@ -188,6 +198,11 @@ class CategoryWrapper extends Component {
         const THUMB_URL = 'https://drive.google.com/thumbnail?id=';
         const condition = this.props.selected.name;
         let posters = this.state.boomPosters;
+        let rendered = 0;
+
+        function counter() {
+            return rendered++;
+        }
 
         return (
 
@@ -206,7 +221,8 @@ class CategoryWrapper extends Component {
                                              poster.name,
                                              poster.tags,
                                              poster.filename,
-                                             poster.number);
+                                             poster.number,
+                                             poster.posted_at);
                                          {this.addViewed(poster)}
                                      }}
                                 />
@@ -287,7 +303,8 @@ class CategoryWrapper extends Component {
                                                  viewedPoster.name,
                                                  viewedPoster.tags,
                                                  viewedPoster.filename,
-                                                 viewedPoster.number);
+                                                 viewedPoster.number,
+                                                 viewedPoster.posted_at);
                                          }}
                                     />
                                 </div>
@@ -335,7 +352,8 @@ class CategoryWrapper extends Component {
                                                  poster.name,
                                                  poster.tags,
                                                  poster.filename,
-                                                 poster.number);
+                                                 poster.number,
+                                                 poster.posted_at);
                                          }}
                                     />
 
@@ -416,9 +434,15 @@ class CategoryWrapper extends Component {
                                 <div className={'singleTag'}><Chip><Avatar size={24}>А2</Avatar>420x594 мм</Chip></div>
                                 <div className={'singleTag'}><Chip><Avatar size={24}>А3</Avatar>297x420 мм</Chip></div>
                             </div>
+                            <div className={"singleInfoWrapper"}>
+                                <div><strong>Добавлен на сайт: </strong>{this.trimDate(this.state.posted_at)}</div>
+                            </div>
+                            <div className={"singleInfoWrapper"}>
+                                <div><strong>Номер постера: </strong> {this.state.PosterNumber}</div>
+                            </div>
+
                         </div>
                     </div>
-                    {this.showMenu()}
                     {this.renderThumbnails()}
                     {this.renderSimilar()}
                     {this.renderLastPosters()}
