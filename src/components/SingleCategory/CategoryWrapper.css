@@ -35,8 +35,33 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    margin-top: 50px;
+    margin-left: 50px;
+    align-items: flex-start;
+}
+
+.selectorWrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.pagesSelectorBlock {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+}
+
+.selectorBlock {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
     align-items: center;
-    margin-top: 10px;
+
+}
+
+.pageSelectorBlock {
+
 }
 
 .pageButton {
@@ -208,6 +233,7 @@
     -moz-box-shadow: 3px 3px 3px #000;
     box-shadow: 3px 3px 3px #000;
     margin-bottom: 20px;
+    margin-right: 20px;
 }
 
 .viewedPosters {
@@ -215,13 +241,6 @@
 }
 
 
-.selectorBlock {
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-end;
-    align-items: center;
-
-}
 
 .pagesNumberSel {
     line-height: 48px;

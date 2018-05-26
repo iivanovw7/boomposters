@@ -4,6 +4,7 @@ import RaisedButton from 'material-ui/RaisedButton';
 import {selectCategory, pageSelector} from "../../actions/index";
 import {bindActionCreators} from 'redux';
 import _ from 'lodash';
+import DropDownMenu from 'material-ui/DropDownMenu';
 import ArrowBack from 'material-ui/svg-icons/navigation/chevron-left';
 import ArrowForward from 'material-ui/svg-icons/navigation/chevron-right';
 import Description from './description';
@@ -47,9 +48,11 @@ class CategoryWrapper extends Component {
     constructor(props) {
         super(props);
         this.state = {
-
+            //screen width
             width: props.width,
+            //------------------
 
+            //current poster(Item) properties
             categoryName: 'undefined',
             posterID: null,
             filename: null,
@@ -58,11 +61,13 @@ class CategoryWrapper extends Component {
             PosterNumber: null,
             phoneSelected: false,
             posted_at: null,
+            //-----------------
 
             //Current Item specs
             type: 1,
             size: 'А3',
             price: 0,
+            //-----------------
 
             //Last viewed posters
             viewedPosters: {},
@@ -71,8 +76,16 @@ class CategoryWrapper extends Component {
 
             //PagesSplitter
             postersPerPage: 24,
+            //overall quantity of pages to show
+            pagesQuantity: null,
+            //PageNumber
+            postersPageNumber: 0,
+            //posters splitted for multiple pages
+            postersForPages: [],
+            //-----------------
 
 
+            //fetchedPosters from database
             boomPosters: []
 
         };
@@ -81,11 +94,47 @@ class CategoryWrapper extends Component {
 
 
 
+    isSelected() {
+        const condition = this.props.selected.name;
+        let posters = this.state.boomPosters;
+        let result = posters.filter(poster => poster.title === condition);
+        let postersForPages = [];
+
+
+        while(result.length) {
+            postersForPages.push(result.splice(0, this.state.postersPerPage))
+        }
+
+
+        return (
+            {
+                postersForPages
+            }
+        )
+
+
+    }
+
+    pageSelected() {
+        let currentPage = this.state.postersPageNumber;
+
+        return (
+            currentPage
+        )
+    }
+
+
 
     handleType = (event, index, type) => this.setState({type});
     handleSize = (event, index, size) => this.setState({size});
 
-    handlePostersPerPage = (event, index, postersPerPage) => this.setState({postersPerPage: postersPerPage});
+    handlePostersPerPage = (event, index, postersPerPage) => {
+        this.setState({postersPerPage: postersPerPage, postersPageNumber: 0});
+
+    };
+
+    handlepostersPageNumber = (event, index, postersPageNumber) => this.setState({postersPageNumber: postersPageNumber});
+
 
     componentWillMount(){
         this.setState({width: window.innerWidth});
@@ -125,6 +174,7 @@ class CategoryWrapper extends Component {
 
     componentDidMount() {
 
+
         let self = this;
         axios.get(`http://localhost:8181/posters`)
             .then(function (response) {
@@ -135,43 +185,66 @@ class CategoryWrapper extends Component {
                 console.log(error)
             });
 
-        console.log(this.state.boomPosters)
+        console.log(this.state.boomPosters);
+
+        if (this.props.selected) {
+
+        }
+
     }
 
     //Page Navigation Menu
 
+    renderNavigation() {
+
+        let postersForPages = this.isSelected();
+        let currentPage = this.pageSelected();
+        let pagesQuantity = postersForPages.postersForPages.length;
+        let MenuItems = [];
+
+
+        for (let i=0; i < pagesQuantity; i++) {
+            let str = "Cтраница"+" "+(i+1);
+            MenuItems.push({value: i,  primaryText: str})
+        }
+
+
+        return (
+            <SelectField
+                autoWidth={true}
+                value={this.state.postersPageNumber}
+                onChange={this.handlepostersPageNumber}
+                floatingLabelStyle={{color: 'black'}}
+                underlineStyle={{display: 'none'}}
+                className={'classTypeSelector'}
+                style={texture}
+            >
+                {MenuItems.map(x => <MenuItem value={x.value} primaryText={x.primaryText} key={x.value}/>)}
+            </SelectField>
+        )
+    }
+
+
     showMenu() {
         return (
             <div className={'showMenu'}>
-                <div>
-                </div>
-                <div className={'selectorBlock'}>
-                    <RaisedButton
-                        className={'pageButton'}
-                        icon={<ArrowBack/>}
-                        value={1}
-                        labelPosition="before"
-                    />
-                    <SelectField
-                        autoWidth={true}
-                        floatingLabelFixed={true}
-                        value={this.state.postersPerPage}
-                        onChange={this.handlePostersPerPage}
-                        className={''}
-                        style={SlTexture}
-                        floatingLabelStyle={{color: 'black'}}
-                        underlineStyle={{display: 'none'}}
-                    >
-                        <MenuItem  value={12} primaryText="12 на странице" />
-                        <MenuItem  value={24} primaryText="24 на странице" />
-                        <MenuItem  value={48} primaryText="48 на странице" />
-                    </SelectField>
-                    <RaisedButton
-                        className={'pageButton'}
-                        icon={<ArrowForward/>}
-                        value={2}
-                        labelPosition="before"
-                    />
+                <div className={'selectorWrapper'}>
+                    <div className="typeWrapper">
+                        <SelectField
+                            autoWidth={true}
+                            value={this.state.postersPerPage}
+                            onChange={this.handlePostersPerPage}
+                            floatingLabelStyle={{color: 'black'}}
+                            underlineStyle={{display: 'none'}}
+                            className={'classTypeSelector'}
+                            style={texture}
+                        >
+                            <MenuItem  value={12} primaryText="12 постеров на странице" />
+                            <MenuItem  value={24} primaryText="24 постера на странице" />
+                            <MenuItem  value={48} primaryText="48 постеров на странице" />
+                        </SelectField>
+                        {this.renderNavigation()}
+                    </div>
                 </div>
             </div>
 
@@ -197,22 +270,28 @@ class CategoryWrapper extends Component {
 
         const THUMB_URL = 'https://drive.google.com/thumbnail?id=';
         const condition = this.props.selected.name;
-        let posters = this.state.boomPosters;
+        //let posters = this.state.boomPosters;
         let rendered = 0;
+
+        let postersForPages = this.isSelected();
+        let currentPage = this.pageSelected();
+        //let pages = postersForPages.length;
 
         function counter() {
             return rendered++;
         }
 
+
         return (
 
             <div className="grid fade-in-element">
 
-                {_.map(posters, poster => {
+                {_.map(postersForPages.postersForPages[currentPage], poster => {
                     if (poster.title === condition) {
                         return (
                             <div className='hover02' key={poster.number}>
                                 <img className={''} src={`${THUMB_URL}${poster.id}`}
+                                     onshow={counter()}
                                      onClick={() => {
                                          window.scrollTo(0, 0);
                                          this.phoneCheck(condition);
@@ -224,6 +303,7 @@ class CategoryWrapper extends Component {
                                              poster.number,
                                              poster.posted_at);
                                          {this.addViewed(poster)}
+
                                      }}
                                 />
                             </div>
@@ -373,6 +453,7 @@ class CategoryWrapper extends Component {
     render() {
 
 
+
         if (!this.props.selected) {
 
             return (
@@ -443,7 +524,9 @@ class CategoryWrapper extends Component {
 
                         </div>
                     </div>
+                    {this.showMenu()}
                     {this.renderThumbnails()}
+                    {this.scrollToNavMenu()}
                     {this.renderSimilar()}
                     {this.renderLastPosters()}
                 </div>
@@ -452,11 +535,13 @@ class CategoryWrapper extends Component {
         }
 
         return (
-
             <div>
                 <h2 className="singleTile">{this.props.selected.title}</h2>
                 <div className={'textBlock'}><Description/></div>
-                <div> {this.renderThumbnails()} </div>
+                <div>
+                    {this.showMenu()}
+                    {this.renderThumbnails()}
+                </div>
             </div>
 
         );
