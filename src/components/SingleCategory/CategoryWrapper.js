@@ -174,6 +174,7 @@ class CategoryWrapper extends Component {
 
     componentDidMount() {
 
+        this.setState({postersPageNumber: 0});
 
         let self = this;
         axios.get(`http://localhost:8181/posters`)
