@@ -101,6 +101,7 @@ class CategoryWrapper extends Component {
         let postersForPages = [];
 
 
+
         while(result.length) {
             postersForPages.push(result.splice(0, this.state.postersPerPage))
         }
@@ -174,7 +175,7 @@ class CategoryWrapper extends Component {
 
     componentDidMount() {
 
-        this.setState({postersPageNumber: 0});
+        this.setState({ postersPageNumber: 0});
 
         let self = this;
         axios.get(`http://localhost:8181/posters`)
@@ -527,7 +528,6 @@ class CategoryWrapper extends Component {
                     </div>
                     {this.showMenu()}
                     {this.renderThumbnails()}
-                    {this.scrollToNavMenu()}
                     {this.renderSimilar()}
                     {this.renderLastPosters()}
                 </div>

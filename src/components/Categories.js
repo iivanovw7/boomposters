@@ -17,6 +17,7 @@ import IconMenu from 'material-ui/IconMenu';
 import IconButton from 'material-ui/IconButton';
 
 
+
 import './Navigation/NavBar.css';
 import './MainPage.css';
 import './Categories.css';
