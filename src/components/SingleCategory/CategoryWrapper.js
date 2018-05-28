@@ -178,7 +178,7 @@ class CategoryWrapper extends Component {
         this.setState({ postersPageNumber: 0});
 
         let self = this;
-        axios.get(`http://localhost:8181/posters`)
+        axios.get(`http://172.104.91.160:8181/posters`)
             .then(function (response) {
                 console.log(response);
                 self.setState({boomPosters : response.data})
