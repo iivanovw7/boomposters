@@ -4,7 +4,7 @@ import _ from 'lodash';
 import CategoryWrapper from './SingleCategory/CategoryWrapper.js';
 import RaisedButton from 'material-ui/RaisedButton';
 import {bindActionCreators} from 'redux';
-import {selectCategory, pageSelector} from "../actions/index";
+import { selectCategory, pageSelector, setPostersQuantity, setPageNumber} from "../actions/index";
 import { Uploader } from './UploadPoster.js'
 import Whatshot from 'material-ui/svg-icons/social/whatshot';
 import ShoppingCart from 'material-ui/svg-icons/action/shopping-cart';
@@ -34,7 +34,7 @@ export class Categories extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            showLogo: true,
+            showLogo: true
         };
 
     }

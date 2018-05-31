@@ -1,8 +1,8 @@
-import React, {Component} from 'react';
-import {connect} from 'react-redux';
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import RaisedButton from 'material-ui/RaisedButton';
-import {selectCategory, pageSelector} from "../../actions/index";
-import {bindActionCreators} from 'redux';
+import { selectCategory, pageSelector, setPostersQuantity, setPageNumber} from "../../actions/index";
+import { bindActionCreators } from 'redux';
 import _ from 'lodash';
 import DropDownMenu from 'material-ui/DropDownMenu';
 import ArrowBack from 'material-ui/svg-icons/navigation/chevron-left';
@@ -95,6 +95,7 @@ class CategoryWrapper extends Component {
 
 
     isSelected() {
+
         const condition = this.props.selected.name;
         let posters = this.state.boomPosters;
         let result = posters.filter(poster => poster.title === condition);
@@ -118,6 +119,8 @@ class CategoryWrapper extends Component {
 
     pageSelected() {
         let currentPage = this.state.postersPageNumber;
+
+
 
         return (
             currentPage
@@ -204,6 +207,10 @@ class CategoryWrapper extends Component {
         let pagesQuantity = postersForPages.postersForPages.length;
         let MenuItems = [];
 
+        if (currentPage > postersForPages.postersForPages.length) {
+            currentPage = 0;
+        }
+
 
         for (let i=0; i < pagesQuantity; i++) {
             let str = "Cтраница"+" "+(i+1);
@@ -214,7 +221,7 @@ class CategoryWrapper extends Component {
         return (
             <SelectField
                 autoWidth={true}
-                value={this.state.postersPageNumber}
+                value={currentPage}
                 onChange={this.handlepostersPageNumber}
                 floatingLabelStyle={{color: 'black'}}
                 underlineStyle={{display: 'none'}}
@@ -270,14 +277,19 @@ class CategoryWrapper extends Component {
     //Thumbnails wrapper
     renderThumbnails() {
 
+
         const THUMB_URL = 'https://drive.google.com/thumbnail?id=';
         const condition = this.props.selected.name;
-        //let posters = this.state.boomPosters;
+
         let rendered = 0;
 
         let postersForPages = this.isSelected();
         let currentPage = this.pageSelected();
-        //let pages = postersForPages.length;
+
+
+        if (currentPage > postersForPages.postersForPages.length) {
+            currentPage = 0;
+        }
 
         function counter() {
             return rendered++;
