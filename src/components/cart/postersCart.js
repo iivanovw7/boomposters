@@ -3,14 +3,12 @@ import {connect} from 'react-redux';
 import RaisedButton from 'material-ui/RaisedButton';
 import {bindActionCreators} from 'redux';
 import {removeFromCart} from '../../actions/index';
-import { selectCategory, pageSelector, addToCart } from "../../actions/index";
+import {selectCategory, pageSelector, addToCart} from "../../actions/index";
 import IconButton from 'material-ui/IconButton';
 import Cancel from 'material-ui/svg-icons/navigation/cancel';
 import './postersCart.css';
 import '../MainPage.css';
 import '../SingleCategory/CategoryWrapper.css';
-
-
 
 
 class Cart extends Component {
@@ -26,7 +24,7 @@ class Cart extends Component {
 
     }
 
-    componentWillMount(){
+    componentWillMount() {
 
         this.setState({selectedCategory: this.props.selected});
         console.log(this.state.selectedCategory);
@@ -46,15 +44,24 @@ class Cart extends Component {
                 <div className='thumbWrapper'>
                     <img className={''} src={`${THUMB_URL}${item.id}`}/>
                 </div>
+                <div className={'descrWrapper'}>
                     <p>{item.name}</p>
+                </div>
+                <div className={'descrWrapper'}>
                     <p>Размер: {item.size}</p>
+                </div>
+                <div className={'descrWrapper'}>
                     <p>{item.price} ₽</p>
-                    <IconButton tooltip="Удалить из корзины"
+                </div>
+                <div className={'descrWrapper'}>
+                    <IconButton
+                                tooltip="Удалить из корзины"
                                 onClick={() => {
                                     this.props.removeFromCart(item);
                                 }}>
                         <Cancel/>
                     </IconButton>
+                </div>
             </div>
         });
 
@@ -103,7 +110,6 @@ function mapDispatchToProps(dispatch) {
 
     }, dispatch)
 }
-
 
 
 export default connect(mapStateToProps, mapDispatchToProps)(Cart);

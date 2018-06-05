@@ -76,7 +76,7 @@ class CategoryWrapper extends Component {
             //-----------------
 
             //Current Item specs
-            type: 1,
+            type: 'Плакат на постерной бумаге',
             size: 'A3',
             price: 0,
             //-----------------
@@ -191,7 +191,7 @@ class CategoryWrapper extends Component {
                 name: this.state.PosterName,
                 type: this.state.type,
                 size: this.state.size,
-                price: this.renderPrice()
+                price: this.renderPrice(),
             };
 
         return item;
@@ -555,7 +555,7 @@ class CategoryWrapper extends Component {
                                     floatingLabelStyle={{color: 'black'}}
                                     underlineStyle={{display: 'none'}}
                                 >
-                                    <MenuItem value={1} primaryText="Плакат на постерной бумаге" />
+                                    <MenuItem value={'Плакат на постерной бумаге'} primaryText='Плакат на постерной бумаге' />
                                 </SelectField>
                             </div>
                             <div className="typeWrapper">

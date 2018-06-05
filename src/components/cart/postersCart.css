@@ -18,7 +18,12 @@
     font-family: 'Roboto', sans-serif;
 }
 
-
+.descrWrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    justify-items: center;
+}
 
 .cartElement {
     margin-left: 30px;
@@ -28,9 +33,10 @@
 }
 .thumbWrapper {
     position: relative;
-    width: 100px;
-    height: 100px;
+    width: 80px;
+    height: 80px;
     overflow: hidden;
+    border-radius: 5px;
 }
 
 .thumbWrapper img {
@@ -42,6 +48,7 @@
     -webkit-transform: translate(-50%,-50%);
     -ms-transform: translate(-50%,-50%);
     transform: translate(-50%,-50%);
+
 
 }
 
