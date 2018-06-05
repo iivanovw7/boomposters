@@ -1,0 +1,72 @@
+@font-face {
+    font-family: 'Snowstorm';
+    src: url('../../fonts/useanyfont/Snowstorm.woff') format('woff');
+    font-weight: 700;
+    font-style: normal;
+    font-size: x-large;
+}
+
+.cartContainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    justify-items: center;
+    flex-wrap: nowrap;
+    color: white;
+
+    font-size: large;
+    font-family: 'Roboto', sans-serif;
+}
+
+
+
+.cartElement {
+    margin-left: 30px;
+    margin-right: 30px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+}
+.thumbWrapper {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    overflow: hidden;
+}
+
+.thumbWrapper img {
+    position: relative;
+    left: 50%;
+    top: 50%;
+    height: 100%;
+    width: auto;
+    -webkit-transform: translate(-50%,-50%);
+    -ms-transform: translate(-50%,-50%);
+    transform: translate(-50%,-50%);
+
+}
+
+.itemDescription {
+    border: 2px dashed #020209;
+    border-radius: 5px;
+    margin-top: 10px;
+
+
+    background-color: rgba(4, 4, 37, 0.4);
+    margin-right: 20px;
+    margin-left: 20px;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 10px;
+
+
+}
+
+.itemDescription p {
+    width: 150px; /* Ширина блока */
+    word-wrap: normal;
+}
+
+
+

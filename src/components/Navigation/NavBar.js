@@ -13,7 +13,17 @@ import TextField from 'material-ui/TextField';
 import SvgIcon from 'material-ui/SvgIcon';
 import darkBaseTheme from 'material-ui/styles/baseThemes/darkBaseTheme';
 import {bindActionCreators} from 'redux';
-import {selectCategory, pageSelector} from "../../actions/index";
+import {selectCategory, pageSelector, displayCart} from "../../actions/index";
+import Alert from 'react-s-alert';
+import 'react-s-alert/dist/s-alert-default.css';
+
+import 'react-s-alert/dist/s-alert-css-effects/slide.css';
+import 'react-s-alert/dist/s-alert-css-effects/scale.css';
+import 'react-s-alert/dist/s-alert-css-effects/bouncyflip.css';
+import 'react-s-alert/dist/s-alert-css-effects/flip.css';
+import 'react-s-alert/dist/s-alert-css-effects/genie.css';
+import 'react-s-alert/dist/s-alert-css-effects/jelly.css';
+import 'react-s-alert/dist/s-alert-css-effects/stackslide.css';
 
 
 
@@ -45,6 +55,16 @@ const texture = {
 class NavBar extends React.Component {
 
 
+    displayCartItems() {
+        let state = this.props.cartShow;
+
+
+        if (state === false && this.props.cart.length > 0) {
+            return this.props.displayCart(true);
+        } else if (state === true && this.props.cart.length > 0) {
+            return this.props.displayCart(false);
+        }
+    }
 
     getCategories() {
         return _.map(this.props.categories, category => {
@@ -52,6 +72,8 @@ class NavBar extends React.Component {
                 <MenuItem className='' key={category.id} primaryText={category.title}
                           onClick={() => {
                               this.props.selectCategory(category);
+                              this.props.selectPage(category);
+                              this.props.displayCart(false);
                 }}>
                 </MenuItem>
             );
@@ -75,8 +97,14 @@ class NavBar extends React.Component {
                     >
                         { this.getCategories() }
                     </IconMenu>
-                    <RaisedButton label="Главная" style={style} onClick={() =>  this.props.selectPage('MainPage') }  />
-                    <RaisedButton label="Загрузить" style={style} onClick={() =>  this.props.selectPage('Uploader') }  />
+                    <RaisedButton label="Главная" style={style} onClick={() => {
+                        this.props.selectPage('MainPage');
+                        this.props.displayCart(false);
+                    }}/>
+                    <RaisedButton label="Загрузить" style={style} onClick={() => {
+                        this.props.selectPage('Uploader');
+                        this.props.displayCart(false);
+                    }}/>
                 </ToolbarGroup>
                 <ToolbarGroup>
                     <IconButton> <HomeIcon style={iconStyles} /> </IconButton>
@@ -88,7 +116,14 @@ class NavBar extends React.Component {
                     <ToolbarSeparator />
                     <RaisedButton label="Войти" style={style} />
                     <RaisedButton label="Регистрация" style={style} />
-                    <IconButton> <CartIcon style={iconStyles} /> </IconButton>
+                    <IconButton>
+                        <CartIcon
+                            style={iconStyles}
+                            onClick={ () => {
+                                {this.displayCartItems()}
+                            }}
+                        />
+                    </IconButton>
                 </ToolbarGroup>
             </Toolbar>
 
@@ -106,7 +141,9 @@ function mapStateToProps(state) {
         categories: state.categories,
         vintage: state.vintage,
         selected: state.activeCategory,
-        page: state.activePage
+        page: state.activePage,
+        cartShow: state.showCart,
+        cart: state.cart,
     };
 }
 
@@ -120,7 +157,8 @@ function mapDispatchToProps(dispatch) {
     return bindActionCreators({
 
         selectCategory: selectCategory,
-        selectPage: pageSelector
+        selectPage: pageSelector,
+        displayCart: displayCart
 
     }, dispatch)
 }

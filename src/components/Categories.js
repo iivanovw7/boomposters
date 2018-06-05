@@ -119,14 +119,16 @@ export class Categories extends Component {
                                 onClick={() => {
                                     window.scrollTo(0, 0);
                                     this.props.selectCategory(category);
-                                    this.handleHideLogo()
+                                    this.handleHideLogo();
+                                    this.props.selectPage(category);
                                 }}
                         /></a>
                         <div className={'hover01'}
                              onClick={() => {
                                  window.scrollTo(0, 0);
                                  this.props.selectCategory(category);
-                                 this.handleHideLogo()
+                                 this.handleHideLogo();
+                                 this.props.selectPage(category);
                              }}>{category.title}</div>
                     </div>
                 </div>

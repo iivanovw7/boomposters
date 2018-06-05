@@ -9,6 +9,7 @@ import {bindActionCreators} from 'redux';
 import {selectCategory, pageSelector} from "../actions/index";
 import ScrollUp from './Functions/ScrollUp';
 import Footer from './Footer/MainFooter';
+import Cart from './cart/postersCart'
 import axios from 'axios'
 
 
@@ -91,6 +92,9 @@ class MainPage extends Component {
                 <div className={'navigation'}>
                     <NavBar/>
                 </div>
+                <div>
+                </div>
+                    <Cart />
                 <div>
                     <Categories/>
                 </div>

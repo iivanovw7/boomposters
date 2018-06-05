@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import RaisedButton from 'material-ui/RaisedButton';
-import { selectCategory, pageSelector, setPostersQuantity, setPageNumber} from "../../actions/index";
+import { selectCategory, pageSelector, addToCart} from "../../actions/index";
 import { bindActionCreators } from 'redux';
 import _ from 'lodash';
 import DropDownMenu from 'material-ui/DropDownMenu';
@@ -13,6 +13,8 @@ import MenuItem from 'material-ui/MenuItem';
 import Chip from 'material-ui/Chip';
 import Avatar from 'material-ui/Avatar';
 import axios from 'axios'
+
+
 
 
 import '../Navigation/NavBar.css';
@@ -27,6 +29,13 @@ const style = {
 const texture = {
     backgroundColor: '#303030',
     width: 300,
+};
+
+const addToCartButton = {
+    backgroundColor: '#303030',
+    width: 300,
+    height: 45,
+    marginTop: 10,
 };
 
 const SlTexture = {
@@ -48,6 +57,9 @@ class CategoryWrapper extends Component {
     constructor(props) {
         super(props);
         this.state = {
+
+            selectedCategory: 'undefined',
+
             //screen width
             width: props.width,
             //------------------
@@ -65,9 +77,13 @@ class CategoryWrapper extends Component {
 
             //Current Item specs
             type: 1,
-            size: 'А3',
+            size: 'A3',
             price: 0,
             //-----------------
+
+            //-----------------
+            priceA3: 500,
+            priceA2: 800,
 
             //Last viewed posters
             viewedPosters: {},
@@ -130,7 +146,7 @@ class CategoryWrapper extends Component {
 
 
     handleType = (event, index, type) => this.setState({type});
-    handleSize = (event, index, size) => this.setState({size});
+    handleSize = (event, index, size) => this.setState({size})&&this.renderPrice();
 
     handlePostersPerPage = (event, index, postersPerPage) => {
         this.setState({postersPerPage: postersPerPage, postersPageNumber: 0});
@@ -142,6 +158,8 @@ class CategoryWrapper extends Component {
 
     componentWillMount(){
         this.setState({width: window.innerWidth});
+        this.setState({selectedCategory: this.props.selected});
+
     }
 
 
@@ -164,6 +182,22 @@ class CategoryWrapper extends Component {
             PosterNumber: number,
             posted_at: posted_at,
         });
+
+    posterForCart() {
+
+        let item =
+            {
+                id: this.state.posterID,
+                name: this.state.PosterName,
+                type: this.state.type,
+                size: this.state.size,
+                price: this.renderPrice()
+            };
+
+        return item;
+
+    }
+
 
     phoneCheck(category) {
         if (category === 'phones') {
@@ -190,13 +224,11 @@ class CategoryWrapper extends Component {
                 console.log(error)
             });
 
-        console.log(this.state.boomPosters);
 
-        if (this.props.selected) {
-
-        }
 
     }
+
+
 
     //Page Navigation Menu
 
@@ -352,7 +384,6 @@ class CategoryWrapper extends Component {
     }
 
     //Last viewed posters
-
     addViewed(poster) {
 
         if (_.includes(this.state.viewedPosters, poster) === true) {
@@ -462,6 +493,20 @@ class CategoryWrapper extends Component {
 
     }
 
+    renderPrice() {
+
+        if (this.state.size === 'A3') {
+            return (
+                this.state.priceA3
+            )
+        } else if (this.state.size === 'A2') {
+            return (
+                this.state.priceA2
+            )
+        }
+
+    }
+
 
 
     render() {
@@ -494,6 +539,9 @@ class CategoryWrapper extends Component {
                     <div className={'singlePoster'}>
                         <div className={'singlePosterContent'}>
                             {this.renderSingle()}
+                            <div>
+                                <h2>Цена: {this.renderPrice()} ₽</h2>
+                            </div>
                         </div>
                         <div className={'singlePosterContent'}>
                             <h2>Выберете товар:</h2>
@@ -520,8 +568,8 @@ class CategoryWrapper extends Component {
                                     floatingLabelStyle={{color: 'black'}}
                                     underlineStyle={{display: 'none'}}
                                 >
-                                    <MenuItem value={'А2'} primaryText="Печать на формате А2" />
-                                    <MenuItem value={'А3'} primaryText="Печать на формате А3" />
+                                    <MenuItem value={'A2'} primaryText="Печать на формате А2" />
+                                    <MenuItem value={'A3'} primaryText="Печать на формате А3" />
                                 </SelectField>
                             </div>
                             <div className={'tags'}>
@@ -535,7 +583,21 @@ class CategoryWrapper extends Component {
                             <div className={"singleInfoWrapper"}>
                                 <div><strong>Номер постера: </strong> {this.state.PosterNumber}</div>
                             </div>
-
+                            <div className="typeWrapper">
+                                <RaisedButton
+                                    autoWidth={true}
+                                    style={addToCartButton}
+                                    floatingLabelStyle={{color: 'black'}}
+                                    underlineStyle={{display: 'none'}}
+                                    className={'classTypeSelector'}
+                                    label="В корзину"
+                                    labelPosition="before"
+                                    onClick={ () => {
+                                        this.props.addToCart(this.posterForCart());
+                                        window.scrollTo(0, 0);
+                                    }}
+                                />
+                            </div>
                         </div>
                     </div>
                     {this.showMenu()}
@@ -565,10 +627,13 @@ class CategoryWrapper extends Component {
 
 function mapStateToProps(state) {
     return {
+
         categories: state.categories,
         selected: state.activeCategory,
         page: state.activePage,
-        posters: state.allPosters
+        posters: state.allPosters,
+        cart: state.cart
+
     };
 }
 
@@ -578,8 +643,8 @@ function mapDispatchToProps(dispatch) {
     return bindActionCreators({
 
         selectCategory: selectCategory,
-        selectPage: pageSelector
-
+        selectPage: pageSelector,
+        addToCart: addToCart
 
     }, dispatch)
 }
