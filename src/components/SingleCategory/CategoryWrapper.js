@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import RaisedButton from 'material-ui/RaisedButton';
-import { selectCategory, pageSelector, addToCart} from "../../actions/index";
+import { selectCategory, pageSelector, addToCart, displayCart} from "../../actions/index";
 import { bindActionCreators } from 'redux';
 import _ from 'lodash';
 import DropDownMenu from 'material-ui/DropDownMenu';
@@ -349,6 +349,7 @@ class CategoryWrapper extends Component {
                                              poster.number,
                                              poster.posted_at);
                                          {this.addViewed(poster)}
+                                         this.props.displayCart(false);
 
                                      }}
                                 />
@@ -430,6 +431,7 @@ class CategoryWrapper extends Component {
                                                  viewedPoster.filename,
                                                  viewedPoster.number,
                                                  viewedPoster.posted_at);
+                                             this.props.displayCart(false);
                                          }}
                                     />
                                 </div>
@@ -479,6 +481,7 @@ class CategoryWrapper extends Component {
                                                  poster.filename,
                                                  poster.number,
                                                  poster.posted_at);
+                                             this.props.displayCart(false);
                                          }}
                                     />
 
@@ -595,6 +598,7 @@ class CategoryWrapper extends Component {
                                     onClick={ () => {
                                         this.props.addToCart(this.posterForCart());
                                         window.scrollTo(0, 0);
+                                        this.props.displayCart(true);
                                     }}
                                 />
                             </div>
@@ -632,7 +636,8 @@ function mapStateToProps(state) {
         selected: state.activeCategory,
         page: state.activePage,
         posters: state.allPosters,
-        cart: state.cart
+        cart: state.cart,
+        cartShow: state.showCart,
 
     };
 }
@@ -644,7 +649,8 @@ function mapDispatchToProps(dispatch) {
 
         selectCategory: selectCategory,
         selectPage: pageSelector,
-        addToCart: addToCart
+        addToCart: addToCart,
+        displayCart: displayCart
 
     }, dispatch)
 }

@@ -4,7 +4,7 @@ import _ from 'lodash';
 import CategoryWrapper from './SingleCategory/CategoryWrapper.js';
 import RaisedButton from 'material-ui/RaisedButton';
 import {bindActionCreators} from 'redux';
-import { selectCategory, pageSelector, setPostersQuantity, setPageNumber} from "../actions/index";
+import { selectCategory, pageSelector, setPostersQuantity, setPageNumber,  displayCart} from "../actions/index";
 import { Uploader } from './UploadPoster.js'
 import Whatshot from 'material-ui/svg-icons/social/whatshot';
 import ShoppingCart from 'material-ui/svg-icons/action/shopping-cart';
@@ -121,6 +121,7 @@ export class Categories extends Component {
                                     this.props.selectCategory(category);
                                     this.handleHideLogo();
                                     this.props.selectPage(category);
+                                    this.props.displayCart(false);
                                 }}
                         /></a>
                         <div className={'hover01'}
@@ -129,6 +130,7 @@ export class Categories extends Component {
                                  this.props.selectCategory(category);
                                  this.handleHideLogo();
                                  this.props.selectPage(category);
+                                 this.props.displayCart(false);
                              }}>{category.title}</div>
                     </div>
                 </div>
@@ -158,7 +160,8 @@ function mapStateToProps(state) {
     return {
         categories: state.categories,
         selected: state.activeCategory,
-        page: state.activePage
+        page: state.activePage,
+        cartShow: state.showCart,
     };
 }
 
@@ -168,7 +171,8 @@ function mapDispatchToProps(dispatch) {
     return bindActionCreators({
 
         selectCategory: selectCategory,
-        selectPage: pageSelector
+        selectPage: pageSelector,
+        displayCart: displayCart
 
     }, dispatch)
 }
