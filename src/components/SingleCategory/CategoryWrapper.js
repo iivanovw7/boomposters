@@ -268,8 +268,8 @@ class CategoryWrapper extends Component {
 
     showMenu() {
         return (
-            <div className={'showMenu'}>
-                <div className={'selectorWrapper'}>
+            <div className={''}>
+                <div className={''}>
                     <div className="typeWrapper">
                         <SelectField
                             autoWidth={true}
@@ -604,7 +604,9 @@ class CategoryWrapper extends Component {
                             </div>
                         </div>
                     </div>
-                    {this.showMenu()}
+                    <div className={'singlePosterPagesWrapper'}>
+                        {this.showMenu()}
+                    </div>
                     {this.renderThumbnails()}
                     {this.renderSimilar()}
                     {this.renderLastPosters()}
@@ -627,6 +629,7 @@ class CategoryWrapper extends Component {
     }
 
 }
+
 
 
 function mapStateToProps(state) {

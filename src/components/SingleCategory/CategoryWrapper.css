@@ -88,6 +88,13 @@
 }
 
 @media screen and (min-width: 0px) and (max-width: 800px) {
+
+    .singlePosterPagesWrapper {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
     .singlePoster {
         display: flex;
         flex-direction: column;
@@ -119,6 +126,7 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
+        margin: 20px;
     }
 }
 
@@ -151,6 +159,11 @@
         display: flex;
         flex-direction: row;
         justify-content: flex-start;
+        margin-left: 60px;
+    }
+
+    .singlePosterPagesWrapper {
+
     }
 
 }

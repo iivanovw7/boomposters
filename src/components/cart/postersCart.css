@@ -6,7 +6,46 @@
     font-size: x-large;
 }
 
-.cartContainer{
+@media screen and (min-width: 0px) and (max-width: 800px) {
+
+    .itemDescription {
+        border: 2px dashed #020209;
+        border-radius: 5px;
+        margin-top: 10px;
+
+        background-color: rgba(4, 4, 37, 0.4);
+        margin-right: 20px;
+        margin-left: 20px;
+
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        padding: 10px;
+
+    }
+}
+
+@media screen and (min-width: 800px) {
+
+    .itemDescription {
+        border: 2px dashed #020209;
+        border-radius: 5px;
+        margin-top: 10px;
+
+        background-color: rgba(4, 4, 37, 0.4);
+        margin-right: 20px;
+        margin-left: 20px;
+
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        padding: 10px;
+
+    }
+
+}
+
+.cartContainer {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -31,6 +70,7 @@
     margin-bottom: 20px;
     border-radius: 5px;
 }
+
 .thumbWrapper {
     position: relative;
     width: 80px;
@@ -45,31 +85,13 @@
     top: 50%;
     height: 100%;
     width: auto;
-    -webkit-transform: translate(-50%,-50%);
-    -ms-transform: translate(-50%,-50%);
-    transform: translate(-50%,-50%);
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
     border-radius: 5px;
 
-
 }
-
-.itemDescription {
-    border: 2px dashed #020209;
-    border-radius: 5px;
-    margin-top: 10px;
-
-
-    background-color: rgba(4, 4, 37, 0.4);
-    margin-right: 20px;
-    margin-left: 20px;
-
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    padding: 10px;
-
-
-}
+--Igor povelitel kota i tora
 
 .itemDescription p {
     width: 150px; /* Ширина блока */
