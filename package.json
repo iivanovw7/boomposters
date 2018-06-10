@@ -32,6 +32,7 @@
     "cors": "^2.8.4",
     "css-loader": "^0.28.9",
     "file-loader": "^1.1.6",
+    "flexboxgrid": "^6.3.1",
     "halogenium": "^2.2.3",
     "lodash": "^3.10.1",
     "material-design-icons": "^3.0.1",
