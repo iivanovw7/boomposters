@@ -31,4 +31,9 @@ export function displayCart(tag) {
     }
 }
 
+export function cleanCart() {
+    return {
+        type: types.CLEAN_CART,
+    }
+}
 

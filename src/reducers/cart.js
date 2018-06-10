@@ -1,7 +1,9 @@
-import { ADD_TO_CART, REMOVE_FROM_CART } from '../Constants/ActionTypes'
+import { ADD_TO_CART, REMOVE_FROM_CART, CLEAN_CART } from '../Constants/ActionTypes'
 
 
 import initialState from './initialState';
+
+
 
 
 export default function cart(state = initialState.cart, action) {
@@ -15,6 +17,8 @@ export default function cart(state = initialState.cart, action) {
             //item with the ID we clicked on. filter returns a new array, don't
             //have to spread here
             return state.filter( i => i.id !== action.item.id);
+        case CLEAN_CART:
+            return [];
         default:
             return state;
     }

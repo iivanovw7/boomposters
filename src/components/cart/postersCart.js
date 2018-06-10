@@ -3,13 +3,19 @@ import {connect} from 'react-redux';
 import RaisedButton from 'material-ui/RaisedButton';
 import {bindActionCreators} from 'redux';
 import {removeFromCart} from '../../actions/index';
-import {selectCategory, pageSelector, addToCart} from "../../actions/index";
+import {selectCategory, pageSelector, addToCart, cleanCart} from "../../actions/index";
 import IconButton from 'material-ui/IconButton';
 import Cancel from 'material-ui/svg-icons/navigation/cancel';
 import './postersCart.css';
 import '../MainPage.css';
 import '../SingleCategory/CategoryWrapper.css';
 
+const cleanCartButton = {
+    backgroundColor: '#303030',
+    width: 300,
+    height: 45,
+    marginTop: 10,
+};
 
 class Cart extends Component {
 
@@ -23,6 +29,8 @@ class Cart extends Component {
         };
 
     }
+
+
 
     componentWillMount() {
 
@@ -40,29 +48,31 @@ class Cart extends Component {
 
         const cartList = this.props.cart.map((item, index) => {
 
-            return <div key={index} className="itemDescription fade-in-element">
-                <div className='thumbWrapper'>
-                    <img className={''} src={`${THUMB_URL}${item.id}`}/>
+            return (
+                <div key={index} className="itemDescription fade-in-element">
+                    <div className='thumbWrapper'>
+                        <img className={''} src={`${THUMB_URL}${item.id}`}/>
+                    </div>
+                    <div className={'descrWrapper'}>
+                        <p>{item.name}</p>
+                    </div>
+                    <div className={'descrWrapper'}>
+                        <p>Размер: {item.size}</p>
+                    </div>
+                    <div className={'descrWrapper'}>
+                        <p>{item.price} ₽</p>
+                    </div>
+                    <div className={'descrWrapper'}>
+                        <IconButton
+                            tooltip="Удалить из корзины"
+                            onClick={() => {
+                                this.props.removeFromCart(item);
+                            }}>
+                            <Cancel/>
+                        </IconButton>
+                    </div>
                 </div>
-                <div className={'descrWrapper'}>
-                    <p>{item.name}</p>
-                </div>
-                <div className={'descrWrapper'}>
-                    <p>Размер: {item.size}</p>
-                </div>
-                <div className={'descrWrapper'}>
-                    <p>{item.price} ₽</p>
-                </div>
-                <div className={'descrWrapper'}>
-                    <IconButton
-                                tooltip="Удалить из корзины"
-                                onClick={() => {
-                                    this.props.removeFromCart(item);
-                                }}>
-                        <Cancel/>
-                    </IconButton>
-                </div>
-            </div>
+            )
         });
 
         if (hasProducts) {
@@ -73,6 +83,32 @@ class Cart extends Component {
                     <div className="cart fade-in-element">
                         <div className={'cartContainer'}>
                             {cartList}
+                        </div>
+                        <div className={'cartControlsWrapper'}>
+                            <RaisedButton
+                                autoWidth={true}
+                                style={cleanCartButton}
+                                floatingLabelStyle={{color: 'black'}}
+                                underlineStyle={{display: 'none'}}
+                                className={'classTypeSelector'}
+                                label="Очистить корзину"
+                                labelPosition="before"
+                                onClick={ () => {
+                                    this.props.cleanCart();
+                                    window.scrollTo(0, 0);
+                                }}
+                            />
+                            <RaisedButton
+                                autoWidth={true}
+                                style={cleanCartButton}
+                                floatingLabelStyle={{color: 'black'}}
+                                underlineStyle={{display: 'none'}}
+                                className={'classTypeSelector'}
+                                label="Забрать постеры"
+                                labelPosition="before"
+                                onClick={ () => {
+                                }}
+                            />
                         </div>
                     </div>
                 </div>
@@ -105,7 +141,7 @@ function mapDispatchToProps(dispatch) {
 
     return bindActionCreators({
 
-
+        cleanCart: cleanCart,
         removeFromCart: removeFromCart
 
     }, dispatch)

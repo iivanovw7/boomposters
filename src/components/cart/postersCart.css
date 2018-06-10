@@ -23,6 +23,14 @@
         padding: 10px;
 
     }
+
+    .cartControlsWrapper {
+        display: block;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin: 20px;
+    }
 }
 
 @media screen and (min-width: 800px) {
@@ -41,6 +49,12 @@
         justify-content: space-around;
         padding: 10px;
 
+    }
+
+    .cartControlsWrapper {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
     }
 
 }
