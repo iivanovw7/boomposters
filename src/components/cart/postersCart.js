@@ -75,6 +75,7 @@ class Cart extends Component {
                     </div>
                     <div className={'descrWrapper'}>
                         <IconButton
+                            className={'closeBtn'}
                             tooltip="Удалить из корзины"
                             onClick={() => {
                                 this.props.removeFromCart(item);
