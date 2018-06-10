@@ -14,7 +14,6 @@ const cleanCartButton = {
     backgroundColor: '#303030',
     width: 300,
     height: 45,
-    marginTop: 10,
 };
 
 class Cart extends Component {
@@ -36,6 +35,18 @@ class Cart extends Component {
 
         this.setState({selectedCategory: this.props.selected});
         console.log(this.state.selectedCategory);
+
+    }
+
+    cartSum() {
+        let prices = [];
+        let sum = (accumulator, currentValue) => accumulator + currentValue;
+
+        for (let i=0; i < this.props.cart.length; i++) {
+            prices.push(this.props.cart[i].price);
+        }
+
+        return prices.reduce(sum);
 
     }
 
@@ -85,30 +96,41 @@ class Cart extends Component {
                             {cartList}
                         </div>
                         <div className={'cartControlsWrapper'}>
-                            <RaisedButton
-                                autoWidth={true}
-                                style={cleanCartButton}
-                                floatingLabelStyle={{color: 'black'}}
-                                underlineStyle={{display: 'none'}}
-                                className={'classTypeSelector'}
-                                label="Очистить корзину"
-                                labelPosition="before"
-                                onClick={ () => {
-                                    this.props.cleanCart();
-                                    window.scrollTo(0, 0);
-                                }}
-                            />
-                            <RaisedButton
-                                autoWidth={true}
-                                style={cleanCartButton}
-                                floatingLabelStyle={{color: 'black'}}
-                                underlineStyle={{display: 'none'}}
-                                className={'classTypeSelector'}
-                                label="Забрать постеры"
-                                labelPosition="before"
-                                onClick={ () => {
-                                }}
-                            />
+                            <div className={'cartSumTitle'}>
+                                    <span>
+                                        Постеров на: {this.cartSum(this.props.cart)} ₽
+                                    </span>
+                            </div>
+                            <div>
+                                <span>
+                                    <RaisedButton
+                                        autoWidth={true}
+                                        //style={cleanCartButton}
+                                        floatingLabelStyle={{color: 'black'}}
+                                        underlineStyle={{display: 'none'}}
+                                        className={'classTypeSelector'}
+                                        label="Очистить корзину"
+                                        labelPosition="before"
+                                        onClick={ () => {
+                                            this.props.cleanCart();
+                                            window.scrollTo(0, 0);
+                                        }}
+                                    />
+                                </span>
+                            </div>
+                            <div>
+                                <RaisedButton
+                                    autoWidth={true}
+                                    //style={cleanCartButton}
+                                    floatingLabelStyle={{color: 'black'}}
+                                    underlineStyle={{display: 'none'}}
+                                    className={'classTypeSelector'}
+                                    label="Оформить заказ"
+                                    labelPosition="before"
+                                    onClick={ () => {
+                                    }}
+                                />
+                            </div>
                         </div>
                     </div>
                 </div>

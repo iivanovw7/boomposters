@@ -6,7 +6,14 @@
     font-size: x-large;
 }
 
-@media screen and (min-width: 0px) and (max-width: 800px) {
+.cartSumTitle {
+    font-family: 'Snowstorm', cursive;
+    font-size: 200%;
+    margin-bottom: 20px;
+
+}
+
+@media screen and (min-width: 0px) and (max-width: 600px) {
 
     .itemDescription {
         border: 2px dashed #020209;
@@ -30,6 +37,41 @@
         justify-content: center;
         align-items: center;
         margin: 20px;
+    }
+
+    .cartControlsWrapper div {
+
+    }
+}
+
+@media screen and (min-width: 600px) and (max-width: 800px) {
+
+    .itemDescription {
+        border: 2px dashed #020209;
+        border-radius: 5px;
+        margin-top: 10px;
+
+        background-color: rgba(4, 4, 37, 0.4);
+        margin-right: 20px;
+        margin-left: 20px;
+
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        padding: 10px;
+
+    }
+
+    .cartControlsWrapper {
+        display: block;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin: 20px;
+    }
+
+    .cartControlsWrapper div {
+        margin: 0 auto;
     }
 }
 
@@ -55,6 +97,15 @@
         display: flex;
         flex-direction: row;
         justify-content: flex-end;
+        margin-top: 20px;
+    }
+
+    .cartControlsWrapper div {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin: 0 auto;
     }
 
 }
